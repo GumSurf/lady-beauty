@@ -6,7 +6,7 @@ const categories = [
         id: 1,
         title: "Visage et peau",
         activities: [
-            { id: "a", label: "Soin de visage et corps", to: "/services/soin-visage-corps" },
+            { id: "a", label: "Soin visage & corps", to: "/services/soin-visage-corps" },
             { id: "b", label: "Microblading", to: "/services/microblading" },
             { id: "c", label: "Microneedling", to: "/services/microneedling" },
         ],
@@ -24,7 +24,7 @@ const categories = [
         title: "Corporels et esthétiques",
         activities: [
             { id: "f", label: "Anticellulite", to: "/services/anticellulite" },
-            { id: "g", label: "Épilation à la cire et fil", to: "/services/epilation-cire-fil" },
+            { id: "g", label: "Épilation cire & fil", to: "/services/epilation-cire-fil" },
         ],
     },
 ];
@@ -94,7 +94,7 @@ const Navbar = () => {
                                             <li key={act.id}>
                                                 <Link
                                                     to={act.to}
-                                                    className="block px-4 py-2 hover:text-brand-accent_premium transition"
+                                                    className="block px-4 py-2 hover:text-brand-accent_premium font-semibold transition"
                                                     onClick={() => setIsOpen(false)}
                                                 >
                                                     {act.label}

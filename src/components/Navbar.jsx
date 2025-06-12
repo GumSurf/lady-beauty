@@ -6,7 +6,7 @@ const categories = [
         id: 1,
         title: "Visage et peau",
         activities: [
-            { id: "a", label: "Soin visage & corps", to: "/services/soin-visage-corps" },
+            { id: "a", label: "Soin visage & corps", to: "/services/soin_visage_corps" },
             { id: "b", label: "Microblading", to: "/services/microblading" },
             { id: "c", label: "Microneedling", to: "/services/microneedling" },
         ],

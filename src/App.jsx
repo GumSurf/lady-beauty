@@ -29,10 +29,6 @@ function App() {
                         <Route path="/services" element={<ServicesList />} />
                         <Route path="/booking" element={<Booking />} />
                         <Route path="/contact" element={<Contact />} />
-
-                        {/* Routes services individuelles */}
-                        <Route path="/services/anticellulite" element={<Anticellulite />} />
-                        <Route path="/services/epilation-cire-fil" element={<EpilationCireFil />} />
                         <Route path="/services/:slug" element={<Service />} />
                     </Routes>
                 </Layout>

@@ -4,27 +4,31 @@ import { Link } from "react-router-dom";
 const categories = [
     {
         id: 1,
-        title: "Visage et peau",
+        title: "Visage, corps & esthétique",
         activities: [
-            { id: "a", label: "Soin visage & corps", to: "/services/soin_visage_corps" },
+            { id: "a", label: "Soin visage & corps", to: "/services/soin-visage-and-corps" },
             { id: "b", label: "Microblading", to: "/services/microblading" },
             { id: "c", label: "Microneedling", to: "/services/microneedling" },
+            { id: "c", label: "Winner filler", to: "/services/winner-filler" },
+            { id: "c", label: "Acide hyaluronique", to: "/services/acide-hyaluronique" },
+            { id: "c", label: "Onglerie", to: "/services/onglerie" },
         ],
     },
     {
         id: 2,
         title: "Techniques spécifiques",
         activities: [
-            { id: "d", label: "Ventouse", to: "/services/ventouse" },
-            { id: "e", label: "Plasmapen", to: "/services/plasmapen" },
+            { id: "d", label: "Ventouse", to: "/services/therapie-par-ventouses" },
+            { id: "e", label: "Plasmapen", to: "/services/plasma-pen" },
         ],
     },
     {
         id: 3,
-        title: "Corporels et esthétiques",
+        title: "Minceur & épilation",
         activities: [
-            { id: "f", label: "Anticellulite", to: "/services/anticellulite" },
-            { id: "g", label: "Épilation cire & fil", to: "/services/epilation-cire-fil" },
+            { id: "f", label: "Anticellulite", to: "/services/lipocavitation-anticellulite" },
+            { id: "g", label: "Épilation cire & fil", to: "/services/epilation-a-la-cire-et-au-fil" },
+            { id: "g", label: "Épilation électrique avec aiguille", to: "/services/epilation-electrique-avec-aiguille" },
         ],
     },
 ];

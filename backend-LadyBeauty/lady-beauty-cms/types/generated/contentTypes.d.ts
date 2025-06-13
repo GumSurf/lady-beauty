@@ -403,19 +403,16 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
-    nombre_de_seances: Schema.Attribute.BigInteger;
     price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
-    service: Schema.Attribute.Relation<'manyToOne', 'api::service.service'>;
-    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
     servicesSimilaires: Schema.Attribute.Relation<
       'oneToMany',
       'api::service.service'
     >;
-    sessionDetails: Schema.Attribute.String;
+    sessionDetails: Schema.Attribute.Text;
     sessionsAvailable: Schema.Attribute.String;
+    similar_description: Schema.Attribute.Text;
     slug: Schema.Attribute.UID;
-    Test: Schema.Attribute.Relation<'manyToOne', 'api::service.service'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

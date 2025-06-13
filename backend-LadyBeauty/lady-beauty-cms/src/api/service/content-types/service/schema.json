@@ -41,7 +41,7 @@
       "type": "text"
     },
     "sessionDetails": {
-      "type": "string"
+      "type": "text"
     },
     "benefits": {
       "type": "json"
@@ -55,35 +55,16 @@
     "duration": {
       "type": "string"
     },
-    "nombre_de_seances": {
-      "type": "biginteger"
-    },
     "est_publie": {
       "type": "boolean"
-    },
-    "service": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::service.service",
-      "inversedBy": "servicesSimilaires"
     },
     "servicesSimilaires": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::service.service",
-      "mappedBy": "service"
+      "target": "api::service.service"
     },
-    "services": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::service.service",
-      "mappedBy": "Test"
-    },
-    "Test": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::service.service",
-      "inversedBy": "services"
+    "similar_description": {
+      "type": "text"
     }
   }
 }

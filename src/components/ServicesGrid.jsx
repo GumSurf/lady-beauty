@@ -3,51 +3,71 @@ import { Link } from "react-router-dom";
 
 const categories = [
   {
-    title: "Soins du visage et du corps",
+    title: "Soins Visage, corps & esthétique",
     services: [
       {
-        name: "Soin Visage Corps",
+        name: "Soin Visage & Corps",
         image: "https://res.cloudinary.com/dopysnsl1/image/upload/v1749216090/pexels-arina-krasnikova-6663368_ezz7fw.webp",
         description: "Soins personnalisés pour visage et corps, hydratation et revitalisation.",
       },
       {
         name: "Microneedling",
-        image: "https://res.cloudinary.com/dopysnsl1/image/upload/v1749216070/woman-wellness-center-having-skin-treatment_qsy6bj.webp",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_shiny_diamond_3373721_af03bf71a1.jpg",
         description: "Stimulation du collagène pour une peau éclatante et renouvelée.",
       },
       {
         name: "Microblading",
-        image: "https://res.cloudinary.com/dopysnsl1/image/upload/v1749216090/pexels-estoymhrb-20765765_lzmhfe.webp",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_danxavier_839633_11243480fe.jpg",
+        description: "Maquillage semi-permanent pour sourcils naturels.",
+      },
+      {
+        name: "Winner filler",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_danxavier_839633_11243480fe.jpg",
+        description: "Maquillage semi-permanent pour sourcils naturels.",
+      },
+      {
+        name: "Acide hyaluronique",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_danxavier_839633_11243480fe.jpg",
+        description: "Maquillage semi-permanent pour sourcils naturels.",
+      },
+      {
+        name: "Onglerie",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_danxavier_839633_11243480fe.jpg",
         description: "Maquillage semi-permanent pour sourcils naturels.",
       },
     ],
   },
   {
-    title: "Techniques spécifiques",
+    title: "Techniques Spécifiques",
     services: [
       {
         name: "Ventouse",
-        image: "https://res.cloudinary.com/dopysnsl1/image/upload/v1749216088/pexels-rdne-8313197_tqzlii.webp",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/woman_experiencing_cupping_therapy_3db9ff9d49.jpg",
         description: "Massage par succion pour circulation et détente musculaire.",
       },
       {
         name: "Plasmapen",
-        image: "https://res.cloudinary.com/dopysnsl1/image/upload/v1749216091/before-after-portrait-mature-woman-retouched_lhhnjp.webp",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_pixabay_34769_42dcbca216.jpg",
         description: "Plasma froid pour raffermir et régénérer la peau.",
       },
     ],
   },
   {
-    title: "Soin minceur et épilation",
+    title: "Soin Minceur et Épilation",
     services: [
       {
         name: "Anticellulite",
-        image: "https://res.cloudinary.com/dopysnsl1/image/upload/v1749216091/masseur-doing-anti-cellulite-massage-client-spa-beauty-salon-using-oil_y9d94w.webp",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/close_up_hands_holding_belly_852e1fe8da.jpg",
         description: "Réduction ciblée de la cellulite et lissage de la peau.",
       },
       {
         name: "Épilation à la cire et fil",
-        image: "https://res.cloudinary.com/dopysnsl1/image/upload/v1749216071/pexels-shkrabaanthony-5177995_n01zii.webp",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/close_up_hand_touching_leg_e1587c15a9.jpg",
+        description: "Techniques classiques pour une peau douce et nette.",
+      },
+      {
+        name: "Épilation électrique avec aiguille",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/close_up_hand_touching_leg_e1587c15a9.jpg",
         description: "Techniques classiques pour une peau douce et nette.",
       },
     ],

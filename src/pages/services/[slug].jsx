@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ServicePage from "../../components/ServicePage";
 
-const API_URL = "http://localhost:1337";
+const API_URL = "https://blessed-connection-657913a5dc.strapiapp.com";
 
 const Service = () => {
   const { slug } = useParams();
@@ -37,9 +37,7 @@ const Service = () => {
         const similar = serviceData.servicesSimilaires?.map((s) => ({
           id: s.id,
           name: s.name,
-          imageHero: s.imageHero?.url
-            ? `${API_URL}${s.imageHero.url}`
-            : "",
+          imageHero: s.imageHero?.url,
           shortDescription:
             s.description?.slice(0, 100) + "..." || "",
         })) || [];
@@ -48,9 +46,9 @@ const Service = () => {
 
         const formattedService = {
           name: serviceData.name,
-          imageHero: `${API_URL}${serviceData.imageHero?.url}`,
+          imageHero: serviceData.imageHero.url,
           images: serviceData.images?.map(
-            (img) => `${API_URL}${img.url}`
+            (img) => img.url
           ) || [],
           description: serviceData.description,
           sessionDetails: serviceData.sessionDetails,

@@ -5,6 +5,7 @@ const categories = [
     {
         id: 1,
         title: "Visage, corps & esthétique",
+        shortTitle: "Visage & corps",
         activities: [
             { id: "a", label: "Soin visage & corps", to: "/services/soin-visage-and-corps" },
             { id: "b", label: "Microblading", to: "/services/microblading" },
@@ -17,6 +18,7 @@ const categories = [
     {
         id: 2,
         title: "Techniques spécifiques",
+        shortTitle: "Techniques",
         activities: [
             { id: "g", label: "Ventouse", to: "/services/therapie-par-ventouses" },
             { id: "h", label: "Plasmapen", to: "/services/plasma-pen" },
@@ -25,29 +27,21 @@ const categories = [
     {
         id: 3,
         title: "Minceur & épilation",
+        shortTitle: "Minceur & épil.",
         activities: [
             { id: "i", label: "Anticellulite", to: "/services/lipocavitation-anticellulite" },
             { id: "j", label: "Épilation cire & fil", to: "/services/epilation-a-la-cire-et-au-fil" },
-            { id: "k", label: "Épilation électrique avec aiguille", to: "/services/epilation-electrique-avec-aiguille" },
+            { id: "k", label: "Épilation électrique à l'aiguille", to: "/services/epilation-electrique-a-l-aiguille" },
         ],
     },
 ];
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-
-    // States mobiles pour ouvrir chaque sous-menu
-    const [openMobileMenu, setOpenMobileMenu] = useState({
-        1: false,
-        2: false,
-        3: false,
-    });
+    const [openMobileMenu, setOpenMobileMenu] = useState({ 1: false, 2: false, 3: false });
 
     const toggleMobileSubMenu = (id) => {
-        setOpenMobileMenu((prev) => ({
-            ...prev,
-            [id]: !prev[id],
-        }));
+        setOpenMobileMenu((prev) => ({ ...prev, [id]: !prev[id] }));
     };
 
     return (
@@ -71,6 +65,14 @@ const Navbar = () => {
                             Accueil
                         </Link>
 
+                        <Link
+                            to="/a-propos"
+                            className="hover:text-brand-accent_premium transition font-poppins font-semibold"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            À propos de moi
+                        </Link>
+
                         {/* Catégories avec dropdown */}
                         {categories.map((cat) => (
                             <div key={cat.id} className="group relative">
@@ -78,7 +80,8 @@ const Navbar = () => {
                                     className="hover:text-brand-accent_premium transition font-poppins font-semibold flex items-center gap-1"
                                     type="button"
                                 >
-                                    {cat.title}
+                                    {/* Affichage du titre court pour desktop */}
+                                    {cat.shortTitle}
                                     <svg
                                         className="w-4 h-4 inline-block"
                                         fill="none"
@@ -124,7 +127,6 @@ const Navbar = () => {
                         >
                             Réservation
                         </Link>
-
                     </div>
 
                     {/* Menu mobile */}
@@ -160,7 +162,7 @@ const Navbar = () => {
                         Accueil
                     </Link>
 
-                    {/* Catégories mobiles avec toggle */}
+                    {/* Catégories mobiles avec toggle (affiche le titre long ici) */}
                     {categories.map((cat) => (
                         <div key={cat.id}>
                             <button

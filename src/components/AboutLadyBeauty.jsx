@@ -1,8 +1,20 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const fadeUpVariant = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 const AboutLadyBeauty = () => {
   return (
-    <section className="relative py-20 px-6 sm:px-10 max-w-7xl mx-auto font-poppins overflow-hidden z-10">
+    <motion.section
+      className="relative py-20 px-6 sm:px-10 max-w-7xl mx-auto font-poppins overflow-hidden z-10"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={fadeUpVariant}
+    >
       {/* Décorations flottantes */}
       <div className="absolute top-0 left-0 w-40 h-40 bg-[#F0F0F0] rounded-full blur-2xl opacity-30 animate-floatSlow" />
       <div className="absolute bottom-0 right-0 w-60 h-60 bg-[#E5CFCB] rounded-full blur-2xl opacity-20 animate-floatDelay" />
@@ -13,7 +25,13 @@ const AboutLadyBeauty = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
         {/* Galerie d'images */}
-        <div className="space-y-4">
+        <motion.div
+          className="space-y-4"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <div className="grid grid-cols-2 gap-4">
             <img
               src="https://res.cloudinary.com/dopysnsl1/image/upload/v1749216089/pexels-olly-3756694_nz7k71.webp"
@@ -31,10 +49,16 @@ const AboutLadyBeauty = () => {
             alt="Visage détendu"
             className="rounded-3xl shadow-lg w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
           />
-        </div>
+        </motion.div>
 
         {/* Texte de présentation */}
-        <div className="text-brand-text text-lg sm:text-xl leading-relaxed space-y-5">
+        <motion.div
+          className="text-brand-text text-lg sm:text-xl leading-relaxed space-y-5"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <p>
             Depuis plus d’un an, <strong>Lady Beauty</strong> vous accompagne pour prendre <strong>soin de votre peau</strong> avec des <strong>soins professionnels</strong> et personnalisés.
           </p>
@@ -47,9 +71,9 @@ const AboutLadyBeauty = () => {
           <p className="italic text-brand-accent">
             Prenez un moment pour vous, même une petite heure, et laissez Lady Beauty révéler votre beauté naturelle.
           </p>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

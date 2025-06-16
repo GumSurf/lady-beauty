@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ServicePage from "../../components/ServicePage";
+import Loader from "../../components/Loader";
 
 const API_URL = "https://blessed-connection-657913a5dc.strapiapp.com";
 
@@ -23,7 +24,6 @@ const Service = () => {
         }
 
         const data = await res.json();
-        console.log("Données Strapi brutes : ", data);
 
         if (data.data.length === 0) {
           setError("Service non trouvé");
@@ -32,8 +32,6 @@ const Service = () => {
 
         const serviceData = data.data[0];
 
-        console.log("serviceData = ", serviceData);
-
         const similar = serviceData.servicesSimilaires?.map((s) => ({
           id: s.id,
           name: s.name,
@@ -41,8 +39,6 @@ const Service = () => {
           shortDescription:
             s.description?.slice(0, 100) + "..." || "",
         })) || [];
-
-        console.log("similar = ", similar);
 
         const formattedService = {
           name: serviceData.name,
@@ -72,7 +68,8 @@ const Service = () => {
     fetchService();
   }, [slug]);
 
-  if (loading) return <p>Chargement du service...</p>;
+  if (loading) return <Loader />;
+
   if (error) return <p>{error}</p>;
   if (!service) return null;
 

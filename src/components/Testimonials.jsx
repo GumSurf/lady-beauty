@@ -32,14 +32,11 @@ const Testimonials = () => {
     };
   
     return (
-      <div className="relative w-full min-h-[400px]"> {/* Conteneur parent en relative */}
-        {/* Background full width + height */}
+      <div className="relative w-full min-h-[400px]">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-0"
         ></div>
         <div className="absolute inset-0 bg-black/50"></div>
-  
-        {/* Contenu centré avec max width, sans fond (transparent) */}
         <section className="relative max-w-3xl mx-auto py-16 px-6 text-center animate-fadeInUp font-poppins rounded-xl bg-transparent">
           <h2 className="text-3xl sm:text-4xl font-bold text-brand-gold mb-12 font-playfair">
             Ce que disent nos clientes

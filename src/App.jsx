@@ -5,32 +5,23 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ServicesList from "./pages/ServicesList";
+import ServicesPage from "./pages/Services";
 import Booking from "./pages/Booking";
 import Contact from "./pages/Contact";
-
-// Import des pages services
-import SoinVisageCorps from "./pages/services/SoinVisageCorps";
-import Microblading from "./pages/services/Microblading";
-import Microneedling from "./pages/services/Microneedling";
-import Ventouse from "./pages/services/VentouseTherapy";
-import Plasmapen from "./pages/services/PlasmaPen";
-import Anticellulite from "./pages/services/Anticellulite";
-import EpilationCireFil from "./pages/services/Epilation";
 import Service from "./pages/services/[slug]";
-
+import AboutPage from "./pages/AboutPage";
+import MentionsLegales from "./pages/MentionsLegales";
+import ConditionsGenerales from "./pages/ConditionsGenerales";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
+import NotFound from "./pages/NotFound";
+import AnimatedRoutes from "./pages/AnimatedRoutes";
 
 function App() {
     return (
         <HelmetProvider>
             <div className="bg-pink-50 text-gray-800 min-h-screen flex flex-col">
                 <Layout>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/services" element={<ServicesList />} />
-                        <Route path="/booking" element={<Booking />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/services/:slug" element={<Service />} />
-                    </Routes>
+                <AnimatedRoutes />
                 </Layout>
             </div>
         </HelmetProvider>
@@ -39,14 +30,13 @@ function App() {
 
 function Layout({ children }) {
     return (
-        <>
-            <Navbar />
-            <main className="pt-16">
-                {children}
-            </main>
-            <Footer />
-        </>
+      <div className="flex flex-col min-h-screen bg-pink-50 text-gray-800">
+        <Navbar />
+        <main className="pt-16 flex-grow">{children}</main>
+        <Footer />
+      </div>
     );
-}
-
+  }
+  
+  
 export default App;

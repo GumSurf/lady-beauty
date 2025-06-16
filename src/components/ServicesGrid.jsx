@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const categories = [
   {
@@ -22,17 +23,17 @@ const categories = [
       },
       {
         name: "Winner filler",
-        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_danxavier_839633_11243480fe.jpg",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/close_up_beauty_portrait_sensual_ginger_woman_with_long_hair_posing_with_closed_eyes_ecea2bb9b5.jpg",
         description: "Maquillage semi-permanent pour sourcils naturels.",
       },
       {
         name: "Acide hyaluronique",
-        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_danxavier_839633_11243480fe.jpg",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/pink_abstract_background_oil_bubble_water_wallpaper_fe4364ed5a.jpg",
         description: "Maquillage semi-permanent pour sourcils naturels.",
       },
       {
         name: "Onglerie",
-        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_danxavier_839633_11243480fe.jpg",
+        image: "https://blessed-connection-657913a5dc.media.strapiapp.com/woman_showing_her_beautiful_nails_c77bb5c835.jpg",
         description: "Maquillage semi-permanent pour sourcils naturels.",
       },
     ],
@@ -74,7 +75,6 @@ const categories = [
   },
 ];
 
-// Fonction utilitaire pour générer la classe Tailwind en fonction du nombre d’éléments
 const getGridClasses = (count) => {
   switch (count) {
     case 1:
@@ -88,45 +88,74 @@ const getGridClasses = (count) => {
   }
 };
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 const ServicesGrid = () => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 font-poppins bg-transparent text-brand-text">
       {categories.map(({ title, services }) => {
         const gridClass = getGridClasses(services.length);
         return (
-          <div key={title} className="mb-24">
+          <motion.div
+            key={title}
+            className="mb-24"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={containerVariants}
+          >
             <h2 className="text-4xl font-playfair text-center text-brand-accent_premium mb-12">
               {title}
             </h2>
-            <div className={`grid gap-8 ${gridClass}`}>
+            <motion.div className={`grid gap-8 ${gridClass}`}>
               {services.map(({ name, image, description }) => {
-                const slug = name.toLowerCase().replace(/\s+/g, "-");
+                const slug = name
+                .toLowerCase()
+                .normalize("NFD") // enlève les accents
+                .replace(/[\u0300-\u036f]/g, "") // supprime les diacritiques
+                .replace(/&/g, "and") // remplace les &
+                .replace(/[^a-z0-9]+/g, "-") // remplace tout caractère non alphanumérique par -
+                .replace(/(^-|-$)/g, ""); // enlève les tirets en début/fin
+              
                 return (
-                  <Link
-                    to={`/services/${slug}`}
-                    key={name}
-                    className="relative group overflow-hidden rounded-3xl bg-white/40 backdrop-blur-md border border-[#C99192]/30 shadow-lg hover:shadow-2xl transition-all duration-300"
-                  >
-                    <div className="h-48 overflow-hidden rounded-t-3xl">
-                      <img
-                        src={image}
-                        alt={name}
-                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-4 text-center">
-                      <h3 className="text-xl font-playfair text-brand-accent group-hover:text-brand-accent_premium transition">
-                        {name}
-                      </h3>
-                      <p className="mt-2 text-sm text-brand-text line-clamp-3">
-                        {description}
-                      </p>
-                    </div>
-                  </Link>
+                  <motion.div key={name} variants={cardVariants}>
+                    <Link
+                      to={`/services/${slug}`}
+                      className="relative group overflow-hidden rounded-3xl bg-white/40 backdrop-blur-md border border-[#C99192]/30 shadow-lg hover:shadow-2xl transition-all duration-300"
+                    >
+                      <div className="h-48 overflow-hidden rounded-t-3xl">
+                        <img
+                          src={image}
+                          alt={name}
+                          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-4 text-center">
+                        <h3 className="text-xl font-playfair text-brand-accent group-hover:text-brand-accent_premium transition">
+                          {name}
+                        </h3>
+                        <p className="mt-2 text-sm text-brand-text line-clamp-3">
+                          {description}
+                        </p>
+                      </div>
+                    </Link>
+                  </motion.div>
                 );
               })}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         );
       })}
     </section>

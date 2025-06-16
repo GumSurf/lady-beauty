@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,20 +10,24 @@ const slides = [
         title: "Soin du visage et peau",
         description: "Offrez à votre peau un soin complet et revitalisant, pour un teint frais, lumineux et éclatant de santé.",
         image: "https://res.cloudinary.com/dopysnsl1/image/upload/v1749216090/pexels-arina-krasnikova-6663574_tsqbby.webp",
+        anchor: "visage-corps",
     },
     {
         id: 2,
         title: "Soins techniques spécifiques",
         description: "Des techniques innovantes et douces pour améliorer la texture de votre peau et révéler sa beauté naturelle.",
         image: "https://res.cloudinary.com/dopysnsl1/image/upload/v1749216088/pexels-polina-tankilevitch-3738355_yi9c2u.webp",
+        anchor: "techniques-specifiques",
     },
     {
         id: 3,
         title: "Soins corporels et esthétiques",
         description: "Prenez soin de votre corps avec des soins ciblés pour une peau douce, hydratée et éclatante de vitalité.",
         image: "https://res.cloudinary.com/dopysnsl1/image/upload/v1749216071/pexels-shkrabaanthony-5177995_n01zii.webp",
+        anchor: "minceur-epilation",
     },
 ];
+
 
 const HeroCarousel = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -68,12 +73,12 @@ const HeroCarousel = () => {
                                 {slide.description}
                             </p>
 
-                            <button
+                            <Link
+                                to={`/services-page#${slide.anchor}`}
                                 className="bg-brand-accent_premium text-white px-4 py-2 rounded border border-transparent hover:bg-white hover:text-brand-accent_premium hover:border-brand-accent_premium transition duration-300 font-semibold shadow-sm font-poppins"
-                                onClick={() => alert(`En savoir plus sur : ${slide.title}`)}
                             >
                                 En savoir plus
-                            </button>
+                            </Link>
 
                             <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center gap-2 select-none text-white text-lg italic drop-shadow-lg z-20">
                                 <span>Glissez</span>

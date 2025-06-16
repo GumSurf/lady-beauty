@@ -5,34 +5,26 @@ const Footer = () => {
     return (
         <footer className="bg-brand-primary text-brand-text py-8 font-poppins z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Contenu principal : coordonnées à gauche, carte à droite */}
+                {/* Contenu principal */}
                 <div className="flex flex-col md:flex-row gap-10 justify-between">
-                    {/* Colonne gauche : infos & navigation */}
+                    {/* Colonne gauche */}
                     <div className="flex-1 space-y-6">
                         <div className="font-bold text-2xl text-brand-text hover:text-brand-accent_premium font-playfair">
                             Lady Beauty
                         </div>
 
                         <nav className="flex flex-col sm:flex-row sm:space-x-6 space-y-2 sm:space-y-0">
-                            <Link to="/" className="hover:text-brand-accent_premium transition">
-                                Accueil
-                            </Link>
-                            <Link to="/services" className="hover:text-brand-accent_premium transition">
-                                Services
-                            </Link>
-                            <Link to="/contact" className="hover:text-brand-accent_premium transition">
-                                Contact
-                            </Link>
-                            <Link to="/booking" className="hover:text-brand-accent_premium transition">
-                                Réservation
-                            </Link>
+                            <Link to="/" className="hover:text-brand-accent_premium transition">Accueil</Link>
+                            <Link to="/services" className="hover:text-brand-accent_premium transition">Services</Link>
+                            <Link to="/contact" className="hover:text-brand-accent_premium transition">Contact</Link>
+                            <Link to="/booking" className="hover:text-brand-accent_premium transition">Réservation</Link>
                         </nav>
 
                         <div className="space-y-1 text-brand-text/90">
                             <p>
                                 Téléphone :{" "}
-                                <a href="tel:+33123456789" className="underline hover:text-brand-accent_premium">
-                                    01 23 45 67 89
+                                <a href="tel:+33781589022" className="underline hover:text-brand-accent_premium">
+                                    07 81 58 90 22
                                 </a>
                             </p>
                             <p>
@@ -44,7 +36,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Colonne droite : carte Google Maps */}
+                    {/* Colonne droite : carte */}
                     <div className="flex-1">
                         <h4 className="text-lg font-medium mb-2">Où nous trouver</h4>
                         <div className="rounded-xl overflow-hidden shadow-md w-full h-64">
@@ -62,9 +54,23 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Copyright */}
-                <div className="text-center mt-8 text-sm text-brand-text/70 font-poppins">
-                    &copy; {new Date().getFullYear()} Lady Beauty. Tous droits réservés.
+                {/* Copyright + mentions légales */}
+                <div className="mt-8 text-center text-sm text-brand-text/70 space-y-1">
+                    <div>
+                        &copy; {new Date().getFullYear()} Lady Beauty. Tous droits réservés.
+                    </div>
+                    <div className="flex flex-col sm:flex-row justify-center sm:space-x-4 space-y-1 sm:space-y-0 text-brand-text/60 text-xs">
+                        <Link to="/mentions-legales" className="hover:text-brand-accent_premium underline">
+                            Mentions légales
+                        </Link>
+                        <Link to="/conditions-generales" className="hover:text-brand-accent_premium underline">
+                            Conditions générales
+                        </Link>
+                        <Link to="/politique-confidentialite" className="hover:text-brand-accent_premium underline">
+                            Politique de confidentialité
+                        </Link>
+                        <span className="italic">Site créé par Gabriel Christe</span>
+                    </div>
                 </div>
             </div>
         </footer>

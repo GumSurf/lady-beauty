@@ -97,7 +97,7 @@ const AboutPage = () => {
         <div className="relative z-1">
                     <div
                         className="fixed inset-0 bg-cover bg-center opacity-30 z-1"
-                        style={{ backgroundImage: "url('https://res.cloudinary.com/dopysnsl1/image/upload/v1748951118/pexels-pixabay-237382_d0qi3o.jpg')" }}
+                        style={{ backgroundImage: "url('https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_pixabay_237382_fced0d2134.webp')" }}
                     ></div>
         {/* Témoignages clients */}
         <div className="relative z-10">

@@ -19,7 +19,7 @@ const Home = () => {
                     className="fixed inset-0 bg-cover bg-center opacity-30 z-1"
                     style={{
                         backgroundImage:
-                            "url('https://res.cloudinary.com/dopysnsl1/image/upload/v1749216089/pexels-pixabay-237382_fmyxqx.webp')",
+                            "url('https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_pixabay_237382_fced0d2134.webp')",
                     }}
                 ></div>
 

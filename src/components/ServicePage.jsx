@@ -4,6 +4,7 @@ import Testimonials from "../components/Testimonials";
 import SeoHelmet from "../components/SeoHelmet";
 import { generateJsonLdService } from "../utils/seoHelpers";
 import slugify from "slugify";
+import OptimizedImage from "../components/OptimizedImage";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -11,14 +12,14 @@ const fadeUp = {
 };
 
 const BookingButton = ({ className = "" }) => (
-    <button
-        onClick={() => {
-            document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
-        }}
-        className={`bg-white text-brand-text hover:text-white hover:bg-brand-accent hover:border-brand-accent py-3 px-10 rounded-full border-transparent text-lg shadow-xl transition duration-300 ${className}`}
+    <a
+        href="https://www.fresha.com/fr/p/fatma-aydin-5599261?pId=2527112&fbclid=PAZXh0bgNhZW0CMTEAAaezt7xGhlRSJE2h-fqct0hop4WSmBeblKyEzKqgLQACNboMukQNpMFr-ENvZw_aem_eE9AQbfhEKd7tna3DzhaKQ"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`inline-block bg-white text-brand-text hover:text-white hover:bg-brand-accent hover:border-brand-accent py-3 px-10 rounded-full border-transparent text-lg shadow-xl transition duration-300 ${className}`}
     >
         Réserver mon instant sacré
-    </button>
+    </a>
 );
 
 const ServicePage = ({
@@ -37,6 +38,8 @@ const ServicePage = ({
     const slug = slugify(name, { lower: true, strict: true });
     const jsonLdData = generateJsonLdService({ name, description, image: imageHero });
 
+    console.log(servicesSimilaires);
+
     return (
         <>
             <SeoHelmet
@@ -51,7 +54,7 @@ const ServicePage = ({
                 {/* Hero Section */}
                 <div
                     className="min-h-[80vh] md:h-screen bg-cover bg-center relative flex items-center justify-center z-10"
-                    style={{ backgroundImage: `url(${imageHero})` }}
+                    style={{ backgroundImage: `url(/images/${imageHero}-1280.webp)` }}
                 >
                     <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
                     <motion.div
@@ -73,25 +76,32 @@ const ServicePage = ({
                 {/* Immersive Storytelling */}
                 <section aria-labelledby="story-title" className="relative bg-brand-primary py-24 px-6 mx-auto z-10">
                     <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-                        <motion.img
-                            src={images[0]}
-                            alt={`Illustration de ${name}`}
-                            className="rounded-[3rem] shadow-xl object-cover h-[500px] w-full hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                            variants={fadeUp}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                        />
                         <motion.div
                             variants={fadeUp}
                             initial="hidden"
                             whileInView="show"
                             viewport={{ once: true }}
                         >
-                            <h2 id="story-title" className="text-4xl font-semibold mb-6">Un rituel d’éveil des sens</h2>
+                            <OptimizedImage
+                                basePath={`/images/${images[0]}`}
+                                alt={`Illustration de ${name}`}
+                                widths={[480, 768, 1280, 1920]}
+                                className="rounded-[3rem] shadow-xl object-cover h-[500px] w-full hover:scale-105 transition-transform duration-500"
+                            />
+                        </motion.div>
+                        <motion.div
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                        >
+                            <h2 id="story-title" className="text-4xl font-semibold mb-6">
+                                Un rituel d’éveil des sens
+                            </h2>
                             {description.split("\n").map((para, idx) => (
-                                <p key={idx} className="text-lg leading-relaxed text-gray-700 italic mb-4">{para}</p>
+                                <p key={idx} className="text-lg leading-relaxed text-gray-700 italic mb-4">
+                                    {para}
+                                </p>
                             ))}
                         </motion.div>
                     </div>
@@ -106,19 +116,25 @@ const ServicePage = ({
                             whileInView="show"
                             viewport={{ once: true }}
                         >
-                            <h2 id="session-title" className="text-4xl font-semibold mb-6 text-white">Déroulement de la séance</h2>
+                            <h2 id="session-title" className="text-4xl font-semibold mb-6 text-white">
+                                Déroulement de la séance
+                            </h2>
                             <p className="text-lg leading-relaxed text-white italic">{sessionDetails}</p>
                         </motion.div>
-                        <motion.img
-                            src={images[1]}
-                            alt={`Déroulement du soin ${name}`}
-                            className="rounded-[3rem] shadow-xl object-cover h-[500px] w-full hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
+                        <motion.div
                             variants={fadeUp}
                             initial="hidden"
                             whileInView="show"
                             viewport={{ once: true }}
-                        />
+                        >
+                            <OptimizedImage
+                                basePath={`/images/${images[1]}`}
+                                alt={`Illustration de ${name}`}
+                                widths={[480, 768, 1280, 1920]}
+                                className="rounded-[3rem] shadow-xl object-cover h-[500px] w-full hover:scale-105 transition-transform duration-500"
+                            />
+
+                        </motion.div>
                     </div>
                 </section>
 
@@ -158,7 +174,10 @@ const ServicePage = ({
                 <div className="relative z-1">
                     <div
                         className="fixed inset-0 bg-cover bg-center opacity-30 z-1"
-                        style={{ backgroundImage: "url('https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_pixabay_237382_fced0d2134.webp')" }}
+                        style={{
+                            backgroundImage:
+                                "url('https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_pixabay_237382_fced0d2134.webp')",
+                        }}
                     ></div>
                     <Testimonials />
 
@@ -187,16 +206,13 @@ const ServicePage = ({
                         >
                             {sessionsAvailable}
                         </motion.p>
-                        <motion.div
-                            variants={fadeUp}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                        >
+                        <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
                             <BookingButton />
                         </motion.div>
                     </section>
                 </div>
+
+                {/* Services similaires */}
                 <section className="max-w-full relative bg-white z-1">
                     <div className="max-w-6xl mx-auto px-6 py-20">
                         <motion.h3
@@ -217,9 +233,7 @@ const ServicePage = ({
                                 whileInView="show"
                                 viewport={{ once: true }}
                             >
-                                <p className="text-center text-gray-500">
-                                    Aucun service similaire disponible pour le moment.
-                                </p>
+                                <p className="text-center text-gray-500">Aucun service similaire disponible pour le moment.</p>
                             </motion.div>
                         ) : (
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -233,10 +247,11 @@ const ServicePage = ({
                                         whileInView="show"
                                         viewport={{ once: true }}
                                     >
-                                        <img
-                                            src={service.imageHero}
+                                        <OptimizedImage
+                                            basePath={`/images/${service.imageHero}`}
                                             alt={service.name}
-                                            className="w-full h-48 object-cover"
+                                            className="rounded-t-xl w-full object-cover"
+                                            style={{ height: 192 }}
                                             loading="lazy"
                                         />
                                         <div className="p-4 bg-white">

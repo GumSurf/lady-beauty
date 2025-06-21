@@ -113,20 +113,14 @@ const Navbar = () => {
                             </div>
                         ))}
 
-                        <Link
-                            to="/contact"
-                            className="hover:text-brand-accent_premium transition font-poppins font-semibold"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            Contact
-                        </Link>
-                        <Link
-                            to="/booking"
-                            onClick={() => setIsOpen(false)}
+                        <a
+                            href="https://www.fresha.com/fr/p/fatma-aydin-5599261?pId=2527112&fbclid=PAZXh0bgNhZW0CMTEAAaezt7xGhlRSJE2h-fqct0hop4WSmBeblKyEzKqgLQACNboMukQNpMFr-ENvZw_aem_eE9AQbfhEKd7tna3DzhaKQ"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="bg-brand-accent_premium text-white px-4 py-2 rounded border border-transparent hover:bg-white hover:text-brand-accent_premium hover:border-brand-accent_premium transition duration-300 font-semibold shadow-sm"
                         >
                             Réservation
-                        </Link>
+                        </a>
                     </div>
 
                     {/* Menu mobile */}
@@ -156,7 +150,7 @@ const Navbar = () => {
                 <div className="md:hidden bg-brand-primary px-2 pt-2 pb-4 space-y-1">
                     <Link
                         to="/"
-                        className="block px-3 py-2 rounded hover:bg-brand-accent_premium transition"
+                        className="block px-3 py-2 rounded hover:bg-brand-accent_premium transition font-semibold"
                         onClick={() => setIsOpen(false)}
                     >
                         Accueil
@@ -190,7 +184,7 @@ const Navbar = () => {
                                         <Link
                                             key={act.id}
                                             to={act.to}
-                                            className="block px-3 py-2 rounded hover:bg-brand-accent transition"
+                                            className="block px-3 py-2 rounded hover:bg-brand-accent transition font-semibold"
                                             onClick={() => setIsOpen(false)}
                                         >
                                             {act.label}
@@ -200,21 +194,15 @@ const Navbar = () => {
                             )}
                         </div>
                     ))}
-
-                    <Link
-                        to="/contact"
-                        className="block px-3 py-2 rounded hover:bg-brand-accent transition"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Contact
-                    </Link>
-                    <Link
-                        to="/booking"
-                        className="block px-3 py-2 rounded bg-brand-primary text-brand-text hover:bg-brand-accent transition"
-                        onClick={() => setIsOpen(false)}
+                    
+                    <a
+                        href="https://www.fresha.com/fr/p/fatma-aydin-5599261?pId=2527112&fbclid=PAZXh0bgNhZW0CMTEAAaezt7xGhlRSJE2h-fqct0hop4WSmBeblKyEzKqgLQACNboMukQNpMFr-ENvZw_aem_eE9AQbfhEKd7tna3DzhaKQ"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-3 py-2 rounded bg-brand-primary text-brand-text hover:bg-brand-accent transition font-semibold"
                     >
                         Réservation
-                    </Link>
+                    </a>
                 </div>
             )}
         </nav>

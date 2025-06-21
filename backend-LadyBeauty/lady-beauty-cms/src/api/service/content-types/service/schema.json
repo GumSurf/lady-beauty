@@ -37,6 +37,12 @@
         "audios"
       ]
     },
+    "imageHeroPath": {
+      "type": "string"
+    },
+    "imagesPath": {
+      "type": "json"
+    },
     "description": {
       "type": "text"
     },

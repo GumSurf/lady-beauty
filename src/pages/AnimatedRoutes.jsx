@@ -4,8 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import Home from "./Home";
 import ServicesPage from "./Services";
-import Booking from "./Booking";
-import Contact from "./Contact";
 import Service from "./services/[slug]";
 import AboutPage from "./AboutPage";
 import MentionsLegales from "./MentionsLegales";
@@ -44,8 +42,6 @@ const AnimatedRoutes = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/a-propos" element={<AboutPage />} />
                     <Route path="/services-page" element={<ServicesPage />} />
-                    <Route path="/booking" element={<Booking />} />
-                    <Route path="/contact" element={<Contact />} />
                     <Route path="/services/:slug" element={<Service />} />
                     <Route path="/mentions-legales" element={<MentionsLegales />} />
                     <Route path="/conditions-generales" element={<ConditionsGenerales />} />

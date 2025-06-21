@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import OptimizedImage from "./OptimizedImage"; // adapte le chemin selon ton projet
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -32,21 +33,24 @@ const AboutLadyBeauty = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://res.cloudinary.com/dopysnsl1/image/upload/v1749216089/pexels-olly-3756694_nz7k71.webp"
+          <div className="grid grid-cols-2 gap-4 mb-4">
+            <OptimizedImage
+              basePath="/images/pexels-olly-3756694"
               alt="Institut 1"
+              widths={[480, 768, 1280, 1920]}
               className="rounded-2xl shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
-            <img
-              src="https://res.cloudinary.com/dopysnsl1/image/upload/v1749216092/pexels-andrzej-gdula-177638374-12336389_tpxiqu.webp"
+            <OptimizedImage
+              basePath="/images/pexels-andrzej-gdula-177638374-12336389"
               alt="Soin beauté"
+              widths={[480, 768, 1280, 1920]}
               className="rounded-2xl shadow-md w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <img
-            src="https://res.cloudinary.com/dopysnsl1/image/upload/v1749216089/pexels-jonathanborba-19641830_llfa9u.webp"
+          <OptimizedImage
+            basePath="/images/pexels-jonathanborba-19641830"
             alt="Visage détendu"
+            widths={[480, 768, 1280, 1920]}
             className="rounded-3xl shadow-lg w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
           />
         </motion.div>

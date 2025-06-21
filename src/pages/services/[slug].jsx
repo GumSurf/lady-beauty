@@ -35,17 +35,15 @@ const Service = () => {
         const similar = serviceData.servicesSimilaires?.map((s) => ({
           id: s.id,
           name: s.name,
-          imageHero: s.imageHero?.url,
+          imageHero: s.imageHeroPath || "",
           shortDescription:
             s.description?.slice(0, 100) + "..." || "",
         })) || [];
 
         const formattedService = {
           name: serviceData.name,
-          imageHero: serviceData.imageHero.url,
-          images: serviceData.images?.map(
-            (img) => img.url
-          ) || [],
+          imageHero: serviceData.imageHeroPath || "",
+          images: serviceData.imagesPath || [],
           description: serviceData.description,
           sessionDetails: serviceData.sessionDetails,
           benefits: serviceData.benefits,

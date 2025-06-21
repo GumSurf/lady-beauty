@@ -392,10 +392,12 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     duration: Schema.Attribute.String;
     est_publie: Schema.Attribute.Boolean;
     imageHero: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imageHeroPath: Schema.Attribute.String;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    imagesPath: Schema.Attribute.JSON;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

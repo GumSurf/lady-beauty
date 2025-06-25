@@ -58,7 +58,6 @@ const HeroCarousel = () => {
               <OptimizedImage
                 basePath={slide.image}
                 alt={slide.title}
-                widths={[768, 1280, 1920]}
                 className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-in-out ${
                   activeIndex === index ? "scale-110" : "scale-100"
                 }`}

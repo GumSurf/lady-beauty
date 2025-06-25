@@ -31,7 +31,9 @@ const Home = () => {
                             Prête à révéler votre beauté naturelle ?
                         </h3>
                         <a
-                            href="/booking"
+                            href="https://www.fresha.com/fr/p/fatma-aydin-5599261?pId=2527112&fbclid=PAZXh0bgNhZW0CMTEAAaezt7xGhlRSJE2h-fqct0hop4WSmBeblKyEzKqgLQACNboMukQNpMFr-ENvZw_aem_eE9AQbfhEKd7tna3DzhaKQ"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-block bg-brand-primary hover:bg-brand-primary/90 text-brand-text font-semibold py-3 px-8 sm:py-4 sm:px-12 rounded shadow-lg transition animate-bounceSlow font-poppins"
                         >
                             Prenez rendez-vous aujourd’hui

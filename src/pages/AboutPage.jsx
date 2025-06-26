@@ -15,7 +15,7 @@ const AboutPage = () => {
             <SeoHelmet
                 title="À propos de moi | Lady Beauty"
                 description="Découvrez le parcours et la vision holistique de la fondatrice de Lady Beauty. Une experte diplômée en esthétique et en naturopathie."
-                image="/images/pexels-pixabay-237382-1920.jpg" // exemple image optimisée dans public/images
+                image="/images/pexels-pixabay-237382-1920.jpg"
                 url="https://lady-beauty.vercel.app/a-propos"
             />
 

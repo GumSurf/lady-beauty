@@ -1,14 +1,63 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="public/images/Logo/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="public/images/Logo/favicon-16x16.png" />
+    <link rel="shortcut icon" href="public/images/Logo/favicon.ico" />
+
+    <!-- Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="public/images/Logo/apple-touch-icon.png" />
+
+    <!-- Android -->
+    <link rel="manifest" href="public/images/Logo/site.webmanifest" />
+    <meta name="theme-color" content="#E5CFCB" />
+
+
+    <!-- ✅ Polices -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap"
+        rel="stylesheet" />
+
+    <!-- ✅ SEO de base (sera remplacé dynamiquement par react-helmet) -->
+    <title>Institut Lady Beauty | Soins Esthétiques à Lanester</title>
+    <meta name="description"
+        content="Institut Lady Beauty à Lanester. Soins du visage, du corps, dermopigmentation, épilation, bien-être et beauté naturelle." />
+
+    <!-- ✅ Accessibilité & SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Lady Beauty" />
+    <meta name="copyright" content="Lady Beauty" />
+    <meta name="theme-color" content="#E5CFCB" />
+
+    <!-- ✅ Open Graph (fallback si react-helmet n'est pas chargé) -->
+    <meta property="og:title" content="Institut Lady Beauty | Soins Esthétiques à Lanester" />
+    <meta property="og:description"
+        content="Découvrez les soins de beauté et de bien-être proposés par Lady Beauty à Lanester." />
+    <meta property="og:image" content="https://lady-beauty.vercel.app/images/pexels-pixabay-237382-1920.jpg" />
+    <meta property="og:url" content="https://lady-beauty.vercel.app/" />
+    <meta property="og:type" content="website" />
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Institut Lady Beauty | Soins Esthétiques à Lanester" />
+    <meta name="twitter:description" content="Soins visage, corps, dermopigmentation et bien-être à Lanester." />
+    <meta name="twitter:image" content="https://lady-beauty.vercel.app/images/pexels-pixabay-237382-1920.jpg" />
+
+    <!-- ✅ Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ✅ Canonical -->
+    <link rel="canonical" href="https://lady-beauty.vercel.app/" />
+</head>
+
+<body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-  </body>
+</body>
+
 </html>

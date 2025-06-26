@@ -15,9 +15,8 @@ const Footer = () => {
 
                         <nav className="flex flex-col sm:flex-row sm:space-x-6 space-y-2 sm:space-y-0">
                             <Link to="/" className="hover:text-brand-accent_premium transition">Accueil</Link>
-                            <Link to="/services" className="hover:text-brand-accent_premium transition">Services</Link>
-                            <Link to="/contact" className="hover:text-brand-accent_premium transition">Contact</Link>
-                            <Link to="/booking" className="hover:text-brand-accent_premium transition">Réservation</Link>
+                            <Link to="/a-propos" className="hover:text-brand-accent_premium transition">À propos de moi</Link>
+                            <a href="https://www.fresha.com/fr/p/fatma-aydin-5599261?pId=2527112&fbclid=PAZXh0bgNhZW0CMTEAAaezt7xGhlRSJE2h-fqct0hop4WSmBeblKyEzKqgLQACNboMukQNpMFr-ENvZw_aem_eE9AQbfhEKd7tna3DzhaKQ" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent_premium transition">Réservation</a>
                         </nav>
 
                         <div className="space-y-1 text-brand-text/90">
@@ -69,7 +68,14 @@ const Footer = () => {
                         <Link to="/politique-confidentialite" className="hover:text-brand-accent_premium underline">
                             Politique de confidentialité
                         </Link>
-                        <span className="italic">Site créé par Gabriel Christe</span>
+                        <a
+                            href="https://gumsurf.github.io/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="italic underline hover:text-brand-accent_premium"
+                        >
+                            Site créé par Gabriel Christe
+                        </a>
                     </div>
                 </div>
             </div>

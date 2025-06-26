@@ -45,13 +45,13 @@ const categories = [
 		title: "Techniques Spécifiques",
 		services: [
 			{
-				name: "Ventouse",
+				name: "Thérapie par ventouses",
 				image: "/images/woman-experiencing-cupping-therapy",
 				description:
 					"Massage par succion pour circulation et détente musculaire.",
 			},
 			{
-				name: "Plasmapen",
+				name: "Plasma pen",
 				image: "/images/pexels-pixabay-34769",
 				description: "Plasma froid pour raffermir et régénérer la peau.",
 			},
@@ -61,18 +61,18 @@ const categories = [
 		title: "Soin Minceur et Épilation",
 		services: [
 			{
-				name: "Anticellulite",
+				name: "Lipocavitation anticellulite",
 				image: "/images/close-up-hands-holding-belly",
 				description:
 					"Réduction ciblée de la cellulite et lissage de la peau.",
 			},
 			{
-				name: "Épilation à la cire et fil",
+				name: "Épilation à la cire et au fil",
 				image: "/images/close-up-hand-touching-leg",
 				description: "Techniques classiques pour une peau douce et nette.",
 			},
 			{
-				name: "Épilation électrique avec aiguille",
+				name: "Épilation électrique à l'aiguille",
 				image: "/images/beautiful-woman-lingerie",
 				description: "Techniques classiques pour une peau douce et nette.",
 			},

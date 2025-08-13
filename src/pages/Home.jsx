@@ -9,8 +9,8 @@ const Home = () => {
     return (
         <>
             <SeoHelmet
-                title="Institut Lady Beauty | Soins Esthétiques à Lanester"
-                description="Bienvenue chez Lady Beauty, votre institut de beauté à Lanester. Découvrez nos soins du visage, du corps, la dermopigmentation et bien plus pour révéler votre beauté naturelle."
+                title="Institut Lady Beaute | Soins Esthétiques à Lanester"
+                description="Bienvenue chez Lady Beaute, votre institut de beauté à Lanester. Découvrez nos soins du visage, du corps, la dermopigmentation et bien plus pour révéler votre beauté naturelle."
                 image="/images/pexels-pixabay-237382-1920.jpg"
                 url="https://lady-beauty.vercel.app/"
             />

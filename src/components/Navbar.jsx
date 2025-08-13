@@ -51,7 +51,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="hover:text-brand-accent_premium mb-6 md:mb-0 font-bold text-xl text-brand-heading font-playfair font-semibold">
                         <Link to="/" onClick={() => setIsOpen(false)}>
-                            Lady Beauty
+                            Lady Beaute
                         </Link>
                     </div>
 

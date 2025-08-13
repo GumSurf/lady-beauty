@@ -14,7 +14,7 @@ const ServicesPage = () => {
   return (
     <>
       <SeoHelmet
-        title="Prestations | Lady Beauty"
+        title="Prestations | Lady Beaute"
         description="Découvrez nos soins holistiques pour sublimer votre peau, votre esprit et votre bien-être intérieur."
         url="https://lady-beauty.vercel.app/services"
         image="https://res.cloudinary.com/dopysnsl1/image/upload/v1749216090/pexels-arina-krasnikova-6663368_ezz7fw.webp"
@@ -61,7 +61,7 @@ const ServicesPage = () => {
             whileInView="show"
             viewport={{ once: true }}
           >
-            Chaque soin chez Lady Beauty est un rituel sacré, conçu pour éveiller vos sens, libérer vos tensions et révéler la lumière unique qui sommeille en vous. Notre mission ? Offrir bien plus qu’un soin : une transformation intérieure.
+            Chaque soin chez Lady Beaute est un rituel sacré, conçu pour éveiller vos sens, libérer vos tensions et révéler la lumière unique qui sommeille en vous. Notre mission ? Offrir bien plus qu’un soin : une transformation intérieure.
           </motion.p>
         </section>
 

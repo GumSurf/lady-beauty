@@ -4,7 +4,7 @@ import SeoHelmet from "../components/SeoHelmet";
 const ConditionsGenerales = () => {
     return (
         <>
-            <SeoHelmet title="Conditions générales | Lady Beauty" description="Conditions générales d'utilisation du site Lady Beauty" />
+            <SeoHelmet title="Conditions générales | Lady Beaute" description="Conditions générales d'utilisation du site Lady Beaute" />
             <div className="max-w-4xl mx-auto px-6 py-16 font-serif text-brand-text">
                 <h1 className="text-4xl font-bold mb-8">Conditions générales d’utilisation</h1>
 
@@ -20,14 +20,14 @@ const ConditionsGenerales = () => {
                     <h2 className="text-2xl font-semibold mb-4">2. Accès au site</h2>
                     <p className="text-gray-700">
                         Le site est accessible 24h/24, 7j/7, sauf en cas de force majeure ou de maintenance.
-                        Lady Beauty ne peut être tenue responsable en cas d’interruption ou d’indisponibilité.
+                        Lady Beaute ne peut être tenue responsable en cas d’interruption ou d’indisponibilité.
                     </p>
                 </section>
 
                 <section className="mb-10">
                     <h2 className="text-2xl font-semibold mb-4">3. Responsabilité</h2>
                     <p className="text-gray-700">
-                        Lady Beauty décline toute responsabilité quant à l’usage qui pourrait être fait des
+                        Lady Beaute décline toute responsabilité quant à l’usage qui pourrait être fait des
                         informations présentes sur le site.
                     </p>
                 </section>
@@ -35,7 +35,7 @@ const ConditionsGenerales = () => {
                 <section className="mb-10">
                     <h2 className="text-2xl font-semibold mb-4">4. Propriété intellectuelle</h2>
                     <p className="text-gray-700">
-                        Tous les contenus (textes, images, vidéos) sont la propriété exclusive de Lady Beauty.
+                        Tous les contenus (textes, images, vidéos) sont la propriété exclusive de Lady Beaute.
                         Toute reproduction est interdite sans autorisation préalable.
                     </p>
                 </section>

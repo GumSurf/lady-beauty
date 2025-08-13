@@ -43,7 +43,7 @@ const ServicePage = ({
     return (
         <>
             <SeoHelmet
-                title={`${name} | Lady Beauty`}
+                title={`${name} | Lady Beaute`}
                 description={shortDesc}
                 image={imageHero}
                 url={`https://lady-beauty.vercel.app/services/${slug}`}
@@ -64,11 +64,11 @@ const ServicePage = ({
                         className="relative z-10 text-center px-4"
                     >
                         <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-2xl tracking-wide">
-                            {name}
-                        </h1>
-                        <p className="text-xl md:text-2xl text-brand-rose mt-4 italic">
+                        {name}
+                    </h1>
+                    {/* <p className="text-xl md:text-2xl text-brand-rose mt-4 italic">
                             {duration} • {price}
-                        </p>
+                        </p> */}
                         <BookingButton className="mt-8" />
                     </motion.div>
                 </div>

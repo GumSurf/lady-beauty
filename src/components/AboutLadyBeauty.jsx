@@ -21,7 +21,7 @@ const AboutLadyBeauty = () => {
       <div className="absolute bottom-0 right-0 w-60 h-60 bg-[#E5CFCB] rounded-full blur-2xl opacity-20 animate-floatDelay" />
 
       <h2 className="text-4xl sm:text-5xl font-bold text-brand-text mb-16 text-center font-playfair relative z-10">
-        À propos de <span className="text-brand-accent_premium">Lady Beauty</span>
+        À propos de <span className="text-brand-accent_premium">Lady Beaute</span>
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
@@ -64,7 +64,7 @@ const AboutLadyBeauty = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <p>
-            Depuis plus d’un an, <strong>Lady Beauty</strong> vous accompagne pour prendre <strong>soin de votre peau</strong> avec des <strong>soins professionnels</strong> et personnalisés.
+            Depuis plus d’un an, <strong>Lady Beaute</strong> vous accompagne pour prendre <strong>soin de votre peau</strong> avec des <strong>soins professionnels</strong> et personnalisés.
           </p>
           <p>
             Que vous cherchiez à <strong>illuminer</strong> votre teint, <strong>traiter</strong> vos imperfections ou simplement offrir un moment de <strong>détente</strong>, Fatma vous propose des techniques reconnues dans un cadre élégant.
@@ -73,7 +73,7 @@ const AboutLadyBeauty = () => {
             Spécialisée en <strong>Microneedling</strong>, <strong>Hydrofacial</strong>, <strong>Dermaplaning</strong> et <strong>Plasmapen</strong>, elle vous aide à retrouver une peau éclatante et lisse.
           </p>
           <p className="italic text-brand-accent">
-            Prenez un moment pour vous, même une petite heure, et laissez Lady Beauty révéler votre beauté naturelle.
+            Prenez un moment pour vous, même une petite heure, et laissez Lady Beaute révéler votre beauté naturelle.
           </p>
         </motion.div>
       </div>

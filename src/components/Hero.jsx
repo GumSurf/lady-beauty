@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="text-center py-20 bg-pink-100">
       <h2 className="text-4xl md:text-5xl font-extrabold text-pink-600 mb-4">
-        Prenez soin de vous chez Lady Beauty
+        Prenez soin de vous chez Lady Beaute
       </h2>
       <p className="text-gray-700 text-lg md:text-xl mb-8">
         Sentez-vous belle, détendue et rayonnante.

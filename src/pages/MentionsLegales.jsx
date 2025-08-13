@@ -4,17 +4,17 @@ import SeoHelmet from "../components/SeoHelmet";
 const MentionsLegales = () => {
     return (
         <>
-            <SeoHelmet title="Mentions légales | Lady Beauty" description="Mentions légales du site Lady Beauty" />
+            <SeoHelmet title="Mentions légales | Lady Beaute" description="Mentions légales du site Lady Beaute" />
             <div className="max-w-4xl mx-auto px-6 py-16 font-serif text-brand-text">
                 <h1 className="text-4xl font-bold mb-8">Mentions légales</h1>
 
                 <section className="mb-10">
                     <h2 className="text-2xl font-semibold mb-4">Éditeur du site</h2>
-                    <p className="text-gray-700">Lady Beauty</p>
+                    <p className="text-gray-700">Lady Beaute</p>
                     <p className="text-gray-700">28 Rue de Kergreis, 56600 Lanester</p>
                     <p className="text-gray-700">Téléphone : 07 81 58 90 22</p>
                     <p className="text-gray-700">Email : contact@ladybeauty.fr</p>
-                    <p className="text-gray-700">Directrice de publication : Lady Beauty</p>
+                    <p className="text-gray-700">Directrice de publication : Lady Beaute</p>
                 </section>
 
                 <section className="mb-10">

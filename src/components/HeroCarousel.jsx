@@ -12,7 +12,7 @@ const slides = [
     description:
       "Offrez à votre peau un soin complet et revitalisant, pour un teint frais, lumineux et éclatant de santé.",
     image: "/images/pexels-arina-krasnikova-6663574",
-    anchor: "visage-corps",
+    anchor: "soin-visage-and-corps",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const slides = [
     description:
       "Des techniques innovantes et douces pour améliorer la texture de votre peau et révéler sa beauté naturelle.",
     image: "/images/pexels-polina-tankilevitch-3738355",
-    anchor: "techniques-specifiques",
+    anchor: "therapie-par-ventouses",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const slides = [
     description:
       "Prenez soin de votre corps avec des soins ciblés pour une peau douce, hydratée et éclatante de vitalité.",
     image: "/images/pexels-shkrabaanthony-5177995",
-    anchor: "minceur-epilation",
+    anchor: "epilation-a-la-cire-et-au-fil",
   },
 ];
 
@@ -81,7 +81,7 @@ const HeroCarousel = () => {
               </p>
 
               <Link
-                to={`/services-page#${slide.anchor}`}
+                to={`/services/${slide.anchor}`}
                 className="bg-brand-accent_premium text-white px-4 py-2 rounded border border-transparent hover:bg-white hover:text-brand-accent_premium hover:border-brand-accent_premium transition duration-300 font-semibold shadow-sm font-poppins"
               >
                 En savoir plus

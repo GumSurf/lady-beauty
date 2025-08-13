@@ -5,13 +5,13 @@ import SeoHelmet from "../components/SeoHelmet";
 const PolitiqueConfidentialite = () => {
     return (
         <main className="bg-white text-gray-800 px-6 py-20 max-w-4xl mx-auto font-serif">
-            <SeoHelmet title="Politique de confidentialité | Lady Beauty" description="Politique de confidentialité du site Lady Beauty" />
+            <SeoHelmet title="Politique de confidentialité | Lady Beaute" description="Politique de confidentialité du site Lady Beaute" />
             <h1 className="text-4xl font-bold mb-10 text-center">Politique de confidentialité</h1>
 
             <section className="mb-10">
                 <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
                 <p className="text-gray-700">
-                    Chez Lady Beauty, nous accordons une grande importance à la confidentialité de vos données personnelles. Cette politique vise à vous informer de manière claire et transparente sur la manière dont nous collectons, utilisons et protégeons vos informations.
+                    Chez Lady Beaute, nous accordons une grande importance à la confidentialité de vos données personnelles. Cette politique vise à vous informer de manière claire et transparente sur la manière dont nous collectons, utilisons et protégeons vos informations.
                 </p>
             </section>
 

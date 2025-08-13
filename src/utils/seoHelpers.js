@@ -8,7 +8,7 @@ export function generateJsonLdService({ name, description, image }) {
       "description": shortDesc,
       "provider": {
         "@type": "BeautySalon",
-        "name": "Lady Beauty",
+        "name": "Lady Beaute",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "28 Rue de Kergreis",

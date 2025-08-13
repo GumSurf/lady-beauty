@@ -14,7 +14,7 @@ const testimonials = [
     },
     {
         name: "Julie D.",
-        text: "J’ai testé le microneedling, résultat incroyable ! Merci Lady Beauty pour votre savoir-faire.",
+        text: "J’ai testé le microneedling, résultat incroyable ! Merci Lady Beaute pour votre savoir-faire.",
     },
 ];
 

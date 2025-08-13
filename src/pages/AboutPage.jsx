@@ -13,8 +13,8 @@ const AboutPage = () => {
     return (
         <>
             <SeoHelmet
-                title="À propos de moi | Lady Beauty"
-                description="Découvrez le parcours et la vision holistique de la fondatrice de Lady Beauty. Une experte diplômée en esthétique et en naturopathie."
+                title="À propos de moi | Lady Beaute"
+                description="Découvrez le parcours et la vision holistique de la fondatrice de Lady Beaute. Une experte diplômée en esthétique et en naturopathie."
                 image="/images/pexels-pixabay-237382-1920.jpg"
                 url="https://lady-beauty.vercel.app/a-propos"
             />
@@ -55,7 +55,7 @@ const AboutPage = () => {
                         >
                             <OptimizedImage
                                 basePath="/images/d52f8050-1e7b-4f20-83c1-e65b7170a44d"
-                                alt="Portrait de la fondatrice de Lady Beauty"
+                                alt="Portrait de la fondatrice de Lady Beaute"
                                 widths={[480, 768, 1280, 1920]}
                                 className="rounded-[3rem] shadow-xl hover:scale-105 transition-transform duration-500"
                             />

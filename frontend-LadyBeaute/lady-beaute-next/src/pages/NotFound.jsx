@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const NotFound = () => {
@@ -19,7 +19,7 @@ const NotFound = () => {
           Il semblerait que la page que vous cherchez n’existe pas ou a été déplacée.
         </p>
         <Link
-          to="/"
+          href="/"
           className="inline-block px-6 py-3 bg-brand-accent text-white font-medium rounded-full shadow-lg hover:bg-brand-accent_premium transition"
         >
           Retour à l’accueil

@@ -1,64 +1,65 @@
-import React from "react";
+// pages/services/[slug].jsx
 import ServicePage from "../../components/ServicePage";
 
 const API_URL = "https://blessed-connection-657913a5dc.strapiapp.com";
 
+// Récupère tous les slugs pour pré-générer les pages
 export async function getStaticPaths() {
-  // Récupère tous les slugs des services pour pré-générer les pages statiques
   const res = await fetch(`${API_URL}/api/services`);
   const data = await res.json();
 
   const paths = data.data.map((service) => ({
-    params: { slug: service.attributes.slug },
+    params: { slug: service.slug },
   }));
 
   return {
     paths,
-    fallback: "blocking", // Génération à la demande pour les nouveaux services
+    fallback: "blocking", // Génère à la volée si le slug n’existe pas encore
   };
 }
 
+// Récupère les données pour un slug donné
 export async function getStaticProps({ params }) {
-  // Récupère les données détaillées du service correspondant au slug
-  const res = await fetch(
-    `${API_URL}/api/services?filters[slug][$eq]=${params.slug}&populate=imageHero,images,servicesSimilaires.imageHero`
-  );
+  const { slug } = params;
+
+  const url = `${API_URL}/api/services?filters[slug][$eq]=${slug}&populate[imageHero]=true&populate[images]=true&populate[servicesSimilaires][populate]=imageHero`;
+
+  const res = await fetch(url);
   const data = await res.json();
 
-  if (!data.data.length) {
-    return { notFound: true }; // 404 si service non trouvé
+  if (!data.data || data.data.length === 0) {
+    return { notFound: true };
   }
 
-  const serviceData = data.data[0].attributes;
+  const serviceData = data.data[0];
 
-  // Prépare les services similaires pour le composant
-  const servicesSimilaires = (serviceData.servicesSimilaires || []).map((s) => ({
-    id: s.id,
-    name: s.name,
-    imageHero: s.imageHero?.data?.attributes?.url || "",
-    shortDescription: s.description?.slice(0, 100) + "..." || "",
-  }));
+  const similar =
+    serviceData.servicesSimilaires?.map((s) => ({
+      id: s.id,
+      name: s.name,
+      imageHero: s.imageHeroPath || "",
+      shortDescription: s.description?.slice(0, 100) + "..." || "",
+    })) || [];
 
-  // Prépare le tableau d'images (URLs)
-  const images = (serviceData.images?.data || []).map((img) => img.attributes.url);
+  const formattedService = {
+    name: serviceData.name,
+    imageHero: serviceData.imageHeroPath || "",
+    images: serviceData.imagesPath || [],
+    description: serviceData.description,
+    sessionDetails: serviceData.sessionDetails,
+    benefits: serviceData.benefits,
+    sessionsAvailable: serviceData.sessionsAvailable,
+    duration: serviceData.duration,
+    price: serviceData.price,
+    servicesSimilaires: similar,
+  };
 
   return {
-    props: {
-      name: serviceData.name,
-      imageHero: serviceData.imageHero?.data?.attributes?.url || "",
-      images,
-      description: serviceData.description,
-      sessionDetails: serviceData.sessionDetails,
-      benefits: serviceData.benefits || [],
-      sessionsAvailable: serviceData.sessionsAvailable,
-      duration: serviceData.duration,
-      price: serviceData.price,
-      servicesSimilaires,
-    },
-    revalidate: 60, // ISR : mise à jour toutes les 60 secondes max
+    props: { service: formattedService },
+    revalidate: 60, // régénère toutes les 60s
   };
 }
 
-export default function Service({ ...props }) {
-  return <ServicePage {...props} />;
+export default function Service({ service }) {
+  return <ServicePage {...service} />;
 }

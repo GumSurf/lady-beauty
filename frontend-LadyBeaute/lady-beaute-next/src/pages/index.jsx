@@ -19,7 +19,7 @@ const Home = () => {
                     <HeroCarousel />
                     <AboutLadyBeauty />
                     <ServicesGrid />
-                </div>
+                </div> 
 
                 <div className="relative">
                     {/* Background fixe */}

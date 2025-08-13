@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Footer = () => {
     return (
@@ -14,8 +14,8 @@ const Footer = () => {
                         </div>
 
                         <nav className="flex flex-col sm:flex-row sm:space-x-6 space-y-2 sm:space-y-0">
-                            <Link to="/" className="hover:text-brand-accent_premium transition">Accueil</Link>
-                            <Link to="/a-propos" className="hover:text-brand-accent_premium transition">À propos de moi</Link>
+                            <Link href="/" className="hover:text-brand-accent_premium transition">Accueil</Link>
+                            <Link href="/a-propos" className="hover:text-brand-accent_premium transition">À propos de moi</Link>
                             <a href="https://www.fresha.com/fr/p/fatma-aydin-5599261?pId=2527112&fbclid=PAZXh0bgNhZW0CMTEAAaezt7xGhlRSJE2h-fqct0hop4WSmBeblKyEzKqgLQACNboMukQNpMFr-ENvZw_aem_eE9AQbfhEKd7tna3DzhaKQ" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent_premium transition">Réservation</a>
                         </nav>
 
@@ -59,13 +59,13 @@ const Footer = () => {
                         &copy; {new Date().getFullYear()} Lady Beaute. Tous droits réservés.
                     </div>
                     <div className="flex flex-col sm:flex-row justify-center sm:space-x-4 space-y-1 sm:space-y-0 text-brand-text/60 text-xs">
-                        <Link to="/mentions-legales" className="hover:text-brand-accent_premium underline">
+                        <Link href="/mentions-legales" className="hover:text-brand-accent_premium underline">
                             Mentions légales
                         </Link>
-                        <Link to="/conditions-generales" className="hover:text-brand-accent_premium underline">
+                        <Link href="/conditions-generales" className="hover:text-brand-accent_premium underline">
                             Conditions générales
                         </Link>
-                        <Link to="/politique-confidentialite" className="hover:text-brand-accent_premium underline">
+                        <Link href="/politique-confidentialite" className="hover:text-brand-accent_premium underline">
                             Politique de confidentialité
                         </Link>
                         <a

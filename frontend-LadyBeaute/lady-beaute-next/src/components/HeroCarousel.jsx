@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Slider from "react-slick";
+import Link from "next/link"; // Si tu es en Next.js sinon reviens à react-router-dom
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import OptimizedImage from "./OptimizedImage";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const slides = [
   {
@@ -35,75 +38,79 @@ const slides = [
 const HeroCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 700,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 7000,
-    fade: true,
-    arrows: true,
-    afterChange: (current) => setActiveIndex(current),
-  };
-
   return (
-    <div className="relative w-full overflow-hidden z-10" style={{ height: "calc(100vh - 64px)" }}>
-      <Slider {...settings} style={{ height: "calc(100vh - 64px)" }}>
+    <div
+      className="relative w-full overflow-hidden z-10"
+      style={{ height: "calc(100vh - 64px)" }}
+    >
+      <Swiper
+        modules={[Autoplay, EffectFade]}
+        effect="fade"
+        autoplay={{ delay: 7000, disableOnInteraction: false }}
+        speed={700}
+        loop={true}
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        className="h-full"
+      >
         {slides.map((slide, index) => (
-          <div key={slide.id} className="relative w-full h-screen">
-            {/* OptimizedImage en plein écran */}
-            <div className="absolute inset-0 -z-10">
-              <OptimizedImage
-                basePath={slide.image}
-                alt={slide.title}
-                className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-in-out ${
-                  activeIndex === index ? "scale-110" : "scale-100"
+          <SwiperSlide key={slide.id}>
+            <div className="relative w-full h-screen">
+              {/* OptimizedImage en plein écran */}
+              <div className="absolute inset-0 -z-10">
+                <OptimizedImage
+                  basePath={slide.image}
+                  alt={slide.title}
+                  className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-in-out ${
+                    activeIndex === index ? "scale-110" : "scale-100"
+                  }`}
+                />
+              </div>
+
+              {/* Overlay */}
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-6 bg-black/60 backdrop-blur-sm" />
+
+              {/* Texte */}
+              <div
+                className={`absolute inset-0 flex flex-col justify-center items-center text-white p-6 ${
+                  activeIndex === index ? "animate-slideUpFade" : "opacity-0"
                 }`}
-              />
-            </div>
-
-            {/* Overlay */}
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-6 bg-black/60 backdrop-blur-sm" />
-
-            {/* Texte */}
-            <div
-              className={`absolute inset-0 flex flex-col justify-center items-center text-white p-6 ${
-                activeIndex === index ? "animate-slideUpFade" : "opacity-0"
-              }`}
-            >
-              <h2 className="text-4xl sm:text-6xl font-bold mb-4 drop-shadow-lg text-center font-playfair">
-                {slide.title}
-              </h2>
-              <p className="text-lg sm:text-2xl max-w-2xl text-center drop-shadow-md mb-6 font-poppins">
-                {slide.description}
-              </p>
-
-              <Link
-                to={`/services/${slide.anchor}`}
-                className="bg-brand-accent_premium text-white px-4 py-2 rounded border border-transparent hover:bg-white hover:text-brand-accent_premium hover:border-brand-accent_premium transition duration-300 font-semibold shadow-sm font-poppins"
               >
-                En savoir plus
-              </Link>
+                <h2 className="text-4xl sm:text-6xl font-bold mb-4 drop-shadow-lg text-center font-playfair">
+                  {slide.title}
+                </h2>
+                <p className="text-lg sm:text-2xl max-w-2xl text-center drop-shadow-md mb-6 font-poppins">
+                  {slide.description}
+                </p>
 
-              <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center gap-2 select-none text-white text-lg italic drop-shadow-lg z-20">
-                <span>Glissez</span>
-                <svg
-                  className="w-6 h-6 animate-slideRight"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                <Link
+                  href={`/services/${slide.anchor}`}
+                  className="bg-brand-accent_premium text-white px-4 py-2 rounded border border-transparent hover:bg-white hover:text-brand-accent_premium hover:border-brand-accent_premium transition duration-300 font-semibold shadow-sm font-poppins"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path>
-                </svg>
+                  En savoir plus
+                </Link>
+
+                <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center gap-2 select-none text-white text-lg italic drop-shadow-lg z-20">
+                  <span>Glissez</span>
+                  <svg
+                    className="w-6 h-6 animate-slideRight"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                </div>
               </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
 
       <style>{`
         @keyframes slideRight {
@@ -140,8 +147,7 @@ const HeroCarousel = () => {
         }
 
         .opacity-0 {
-          opacity: 0;
-          pointer-events: none;
+
         }
       `}</style>
     </div>

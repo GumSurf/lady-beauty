@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  /* Couleurs (namespace --color-brand-*) */
+  --color-brand-primary: #FFFFFF;
+  --color-brand-secondary: #F0F0F0;
+  --color-brand-accent: #AE5B5C;
+  --color-brand-rose: #C99192;
+  --color-brand-accent_premium: #926E2A;
+  --color-brand-gold: #D6B370;
+  --color-brand-text: #333333;
+
+  /* Fonts (namespace --font-*) */
+  --font-playfair: 'Playfair Display', serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+/* Keyframes animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(-5%); }
+  50% { transform: translateY(0); }
+}
+
+@keyframes rotate360 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideInLeft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatDelay {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(15px); }
+}
+
+/* Classes utilitaires pour animations */
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in forwards;
+  }
+  .animate-slideInUp {
+    animation: slideInUp 0.8s ease-out forwards;
+  }
+  .animate-bounceSlow {
+    animation: bounceSlow 2s ease-in-out infinite;
+  }
+  .animate-rotate360 {
+    animation: rotate360 3s linear infinite;
+  }
+  .animate-slideInLeft {
+    animation: slideInLeft 0.6s ease forwards;
+  }
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  .animate-floatSlow {
+    animation: floatSlow 6s ease-in-out infinite;
+  }
+  .animate-floatDelay {
+    animation: floatDelay 8s ease-in-out infinite;
+  }
+}
+
+/* Facultatif : tu peux aussi ajouter des utilitaires de fonts si tu veux */
+@layer utilities {
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
+}
+
+html {
+    scroll-behavior: smooth;
+  }

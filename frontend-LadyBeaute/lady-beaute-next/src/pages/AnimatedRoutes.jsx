@@ -2,13 +2,13 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
-import Home from "./Home";
+import Home from "./index";
 import ServicesPage from "./Services";
 import Service from "./services/[slug]";
-import AboutPage from "./AboutPage";
-import MentionsLegales from "./MentionsLegales";
-import ConditionsGenerales from "./ConditionsGenerales";
-import PolitiqueConfidentialite from "./PolitiqueConfidentialite";
+import AboutPage from "./a-propos";
+import MentionsLegales from "./mentions-legales";
+import ConditionsGenerales from "./conditions-generales";
+import PolitiqueConfidentialite from "./politique-confidentialite";
 import NotFound from "./NotFound";
 
 const pageVariants = {
@@ -41,6 +41,8 @@ const AnimatedRoutes = () => {
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<Home />} />
                     <Route path="/a-propos" element={<AboutPage />} />
+                    <Route path="/services-page" element={<ServicesPage />} />
+                    <Route path="/services/:slug" element={<Service />} />
                     <Route path="/mentions-legales" element={<MentionsLegales />} />
                     <Route path="/conditions-generales" element={<ConditionsGenerales />} />
                     <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />

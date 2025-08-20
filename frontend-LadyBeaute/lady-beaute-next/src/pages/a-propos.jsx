@@ -16,7 +16,7 @@ const AboutPage = () => {
                 title="À propos de moi | Lady Beaute"
                 description="Découvrez le parcours et la vision holistique de la fondatrice de Lady Beaute. Une experte diplômée en esthétique et en naturopathie."
                 image="/images/pexels-pixabay-237382-1920.jpg"
-                url="https://lady-beauty.vercel.app/a-propos"
+                url="https://www.ladybeaute.fr/a-propos"
             />
 
             <div className="bg-white text-brand-text font-serif relative z-10">

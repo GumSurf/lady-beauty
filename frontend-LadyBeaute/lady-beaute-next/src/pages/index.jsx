@@ -12,7 +12,7 @@ const Home = () => {
                 title="Institut Lady Beaute | Soins Esthétiques à Lanester"
                 description="Bienvenue chez Lady Beaute, votre institut de beauté à Lanester. Découvrez nos soins du visage, du corps, la dermopigmentation et bien plus pour révéler votre beauté naturelle."
                 image="/images/pexels-pixabay-237382-1920.jpg"
-                url="https://lady-beauty.vercel.app/"
+                url="https://www.ladybeaute.fr/"
             />
             <div>
                 <div className="relative bg-gradient-to-b from-[#FAFAFA] via-[#F0F0F0] to-[#E5CFCB] text-brand-text z-10" >
@@ -27,7 +27,7 @@ const Home = () => {
                         className="fixed inset-0 bg-cover bg-center opacity-30 z-1"
                         style={{
                             backgroundImage:
-                                "url('https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_pixabay_237382_fced0d2134.webp')",
+                                "url('/images/pexels-pixabay-237382-1920.webp')",
                         }}
                     ></div>
 

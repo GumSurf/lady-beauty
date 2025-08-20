@@ -16,7 +16,7 @@ const ServicesPage = () => {
       <SeoHelmet
         title="Prestations | Lady Beaute"
         description="Découvrez nos soins holistiques pour sublimer votre peau, votre esprit et votre bien-être intérieur."
-        url="https://lady-beauty.vercel.app/services"
+        url="https://www.ladybeaute.fr/services"
         image="https://res.cloudinary.com/dopysnsl1/image/upload/v1749216090/pexels-arina-krasnikova-6663368_ezz7fw.webp"
       />
 

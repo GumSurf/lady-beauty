@@ -1,9 +1,10 @@
-import '../styles/globals.css';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { AnimatePresence, motion } from 'framer-motion';
+import "../styles/globals.css";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { AnimatePresence, motion } from "framer-motion";
+import Head from "next/head";
 
 const pageVariants = {
   initial: { opacity: 0, y: 10 },
@@ -31,6 +32,25 @@ export default function MyApp({ Component, pageProps, router }) {
 
   return (
     <>
+      {/* ✅ Balises globales (favicon, fonts, manifest, etc.) */}
+      <Head>
+        {/* Favicon */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/Logo/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/Logo/favicon-16x16.png" />
+        <link rel="shortcut icon" href="/images/Logo/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/Logo/apple-touch-icon.png" />
+        <link rel="manifest" href="/images/Logo/site.webmanifest" />
+        <meta name="theme-color" content="#E5CFCB" />
+
+        {/* Fonts */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      </Head>
+
       <Layout>
         <AnimatePresence mode="wait" initial={false}>
           <motion.div

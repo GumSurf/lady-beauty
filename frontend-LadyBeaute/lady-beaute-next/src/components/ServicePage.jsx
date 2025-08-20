@@ -4,7 +4,7 @@ import Testimonials from "../components/Testimonials";
 import SeoHelmet from "../components/SeoHelmet";
 import { generateJsonLdService } from "../utils/seoHelpers";
 import slugify from "slugify";
-import OptimizedImage from "../components/OptimizedImage";
+import Image from "next/image";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -82,11 +82,13 @@ const ServicePage = ({
                             whileInView="show"
                             viewport={{ once: true }}
                         >
-                            <OptimizedImage
-                                basePath={`/images/${images[0]}`}
+                            <Image
+                                src={`/images/${images[0]}.jpg`}
                                 alt={`Illustration de ${name}`}
-                                widths={[480, 768, 1280, 1920]}
+                                width={1280}
+                                height={500}
                                 className="rounded-[3rem] shadow-xl object-cover h-[500px] w-full hover:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
                         </motion.div>
                         <motion.div
@@ -127,11 +129,13 @@ const ServicePage = ({
                             whileInView="show"
                             viewport={{ once: true }}
                         >
-                            <OptimizedImage
-                                basePath={`/images/${images[1]}`}
+                            <Image
+                                src={`/images/${images[1]}.jpg`}
                                 alt={`Illustration de ${name}`}
-                                widths={[480, 768, 1280, 1920]}
+                                width={1280}
+                                height={500}
                                 className="rounded-[3rem] shadow-xl object-cover h-[500px] w-full hover:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
 
                         </motion.div>
@@ -247,12 +251,14 @@ const ServicePage = ({
                                         whileInView="show"
                                         viewport={{ once: true }}
                                     >
-                                        <OptimizedImage
-                                            basePath={`/images/${service.imageHero}`}
+                                        <Image
+                                            src={`/images/${service.imageHero}.jpg`}
                                             alt={service.name}
+                                            width={1280}
+                                            height={192}
                                             className="rounded-t-xl w-full object-cover"
-                                            style={{ height: 192 }}
                                             loading="lazy"
+                                            sizes="(max-width: 768px) 100vw, 33vw"
                                         />
                                         <div className="p-4 bg-white">
                                             <h4 className="text-xl font-semibold mb-2">{service.name}</h4>

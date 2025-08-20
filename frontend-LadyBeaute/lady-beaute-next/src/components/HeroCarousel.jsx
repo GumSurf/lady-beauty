@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link"; // Si tu es en Next.js sinon reviens à react-router-dom
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-import OptimizedImage from "./OptimizedImage";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
@@ -55,14 +55,16 @@ const HeroCarousel = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={slide.id}>
             <div className="relative w-full h-screen">
-              {/* OptimizedImage en plein écran */}
               <div className="absolute inset-0 -z-10">
-                <OptimizedImage
-                  basePath={slide.image}
+                <Image
+                  src={slide.image + ".jpg"}
                   alt={slide.title}
+                  fill
                   className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-in-out ${
                     activeIndex === index ? "scale-110" : "scale-100"
                   }`}
+                  sizes="100vw"
+                  priority={index === 0}
                 />
               </div>
 

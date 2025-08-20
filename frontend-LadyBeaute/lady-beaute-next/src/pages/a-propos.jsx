@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import SeoHelmet from "../components/SeoHelmet";
 import Testimonials from "../components/Testimonials";
-import OptimizedImage from "../components/OptimizedImage"; // adapte le chemin selon ta structure
+import Image from "next/image";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -53,11 +53,13 @@ const AboutPage = () => {
                             whileInView="show"
                             viewport={{ once: true }}
                         >
-                            <OptimizedImage
-                                basePath="/images/d52f8050-1e7b-4f20-83c1-e65b7170a44d"
+                            <Image
+                                src="/images/d52f8050-1e7b-4f20-83c1-e65b7170a44d.jpg"
                                 alt="Portrait de la fondatrice de Lady Beaute"
-                                widths={[480, 768, 1280, 1920]}
+                                width={1280}
+                                height={500}
                                 className="rounded-[3rem] shadow-xl hover:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
                         </motion.div>
 

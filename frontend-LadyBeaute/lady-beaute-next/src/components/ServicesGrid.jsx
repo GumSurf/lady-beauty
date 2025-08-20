@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import OptimizedImage from "../components/OptimizedImage";
+import Image from "next/image";
 
 const categories = [
     {
@@ -145,11 +145,13 @@ const ServicesGrid = () => {
                                     <motion.div key={name} variants={cardVariants} className="w-full">
                                         <Link href={`/services/${slug}`} className="relative group overflow-hidden rounded-3xl bg-white/40 backdrop-blur-md border border-[#C99192]/30 shadow-lg hover:shadow-2xl transition-all duration-300">
                                             <div className="h-48 overflow-hidden rounded-t-3xl">
-                                                <OptimizedImage
-                                                    basePath={image}
+                                                <Image
+                                                    src={image + ".jpg"}
                                                     alt={name}
-                                                    widths={[480, 768, 1280]}
+                                                    width={1280}
+                                                    height={192}
                                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                                    sizes="(max-width: 768px) 100vw, 25vw"
                                                 />
                                             </div>
                                             <div className="p-4 text-center">

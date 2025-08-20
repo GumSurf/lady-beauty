@@ -129,3 +129,12 @@ html {
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'slick';
+  src: url('/fonts/slick.woff') format('woff'),
+       url('/fonts/slick.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

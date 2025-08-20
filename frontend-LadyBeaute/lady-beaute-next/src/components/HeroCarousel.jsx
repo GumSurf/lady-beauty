@@ -68,6 +68,7 @@ const HeroCarousel = () => {
                                         }`}
                                     sizes="100vw"
                                     priority={index === 0}
+                                    fetchPriority={index === 0 ? "high" : undefined}
                                 />
                             </div>
 

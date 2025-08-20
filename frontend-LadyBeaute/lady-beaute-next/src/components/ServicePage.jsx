@@ -177,13 +177,15 @@ const ServicePage = ({
                 {/* Fixed Background + Testimonials */}
                 <div className="relative">
                     {/* Background fixe */}
-                    <div
-                        className="fixed inset-0 bg-cover bg-center opacity-30 z-1"
-                        style={{
-                            backgroundImage:
-                                "url('/images/pexels-pixabay-237382-1920.webp')",
-                        }}
-                    ></div>
+                    <div className="fixed inset-0 h-screen w-screen">
+                        <Image
+                            src="/images/pexels-pixabay-237382-1920.webp"
+                            alt="Fond Lady Beaute"
+                            fill
+                            className="object-cover opacity-30"
+                            priority
+                        />
+                    </div>
 
                     {/* Contenu normal */}
                     <div className="relative z-10">

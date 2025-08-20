@@ -16,12 +16,6 @@ export default function Document() {
         <link rel="manifest" href="/images/Logo/site.webmanifest" />
         <meta name="theme-color" content="#E5CFCB" />
 
-        {/* Fonts */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap"
-          rel="stylesheet"
-        />
-
         {/* SEO de base — souvent on préfère gérer ça par page avec next/head */}
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Lady Beaute" />
@@ -33,22 +27,18 @@ export default function Document() {
           property="og:description"
           content="Découvrez les soins de beauté et de bien-être proposés par Lady Beaute à Lanester."
         />
-        <meta property="og:image" content="https://lady-beauty.vercel.app/images/pexels-pixabay-237382-1920.jpg" />
-        <meta property="og:url" content="https://lady-beauty.vercel.app/" />
+        <meta property="og:image" content="https://www.ladybeaute.fr/images/pexels-pixabay-237382-1920.jpg" />
+        <meta property="og:url" content="https://www.ladybeaute.fr/" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Institut Lady Beaute | Soins Esthétiques à Lanester" />
         <meta name="twitter:description" content="Soins visage, corps, dermopigmentation et bien-être à Lanester." />
-        <meta name="twitter:image" content="https://lady-beauty.vercel.app/images/pexels-pixabay-237382-1920.jpg" />
-
-        {/* Performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="twitter:image" content="https://www.ladybeaute.fr/images/pexels-pixabay-237382-1920.jpg" />
 
         {/* Canonical */}
-        <link rel="canonical" href="https://lady-beauty.vercel.app/" />
+        <link rel="canonical" href="https://www.ladybeaute.fr/" />
       </Head>
       <body>
         <Main />

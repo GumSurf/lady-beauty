@@ -175,17 +175,19 @@ const ServicePage = ({
                 </section>
 
                 {/* Fixed Background + Testimonials */}
-                <div className="relative z-1">
+                <div className="relative">
+                    {/* Background fixe */}
                     <div
                         className="fixed inset-0 bg-cover bg-center opacity-30 z-1"
                         style={{
                             backgroundImage:
-                                "url('https://blessed-connection-657913a5dc.media.strapiapp.com/pexels_pixabay_237382_fced0d2134.webp')",
+                                "url('/images/pexels-pixabay-237382-1920.webp')",
                         }}
                     ></div>
-                    <Testimonials />
 
-                    {/* Sessions Info */}
+                    {/* Contenu normal */}
+                    <div className="relative z-10">
+                        <Testimonials />
                     <section
                         id="booking"
                         aria-labelledby="session-count-title"
@@ -214,6 +216,7 @@ const ServicePage = ({
                             <BookingButton />
                         </motion.div>
                     </section>
+                    </div>
                 </div>
 
                 {/* Services similaires */}

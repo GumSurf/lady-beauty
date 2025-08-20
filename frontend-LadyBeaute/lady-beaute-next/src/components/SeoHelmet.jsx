@@ -6,7 +6,7 @@ const SeoHelmet = ({ title, description, image, url, jsonLdData }) => {
     "Institut de beauté à Lanester - Soins visage, corps, microblading, et plus.";
   const defaultImage =
     "https://res.cloudinary.com/dopysnsl1/image/upload/v1749216090/pexels-arina-krasnikova-6663368_ezz7fw.webp";
-  const defaultUrl = "https://lady-beauty.vercel.app/";
+  const defaultUrl = "https://www.ladybeaute.fr/";
 
   return (
     <Head>

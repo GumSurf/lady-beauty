@@ -42,11 +42,6 @@ export default function MyApp({ Component, pageProps, router }) {
         <link rel="manifest" href="/images/Logo/site.webmanifest" />
         <meta name="theme-color" content="#E5CFCB" />
 
-        {/* Fonts */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap"
-          rel="stylesheet"
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </Head>

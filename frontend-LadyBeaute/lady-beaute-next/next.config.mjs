@@ -4,26 +4,30 @@ const nextConfig = {
 
   // Optimisation des images (local + Strapi)
   images: {
-    formats: ["image/avif", "image/webp"], // Next générera AVIF/WebP automatiquement
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "ton-strapi.com", // 🔥 mets le domaine de ton Strapi
+        hostname: "ton-strapi.com", // 🔥 remplace par ton domaine Strapi
         pathname: "/uploads/**",
       },
     ],
   },
 
-  // Build moderne uniquement (pas de legacy)
+  // Build moderne uniquement
   swcMinify: true,
   compiler: {
-    removeConsole: process.env.NODE_ENV === "production", // nettoie les console.log
+    removeConsole: process.env.NODE_ENV === "production",
   },
 
-  // Expérimental (utile pour CSS + perf)
+  // Cible uniquement navigateurs modernes
+  future: {
+    webpack5: true,
+  },
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
+    esmExternals: true, // utilise ES modules pour les dépendances → pas de transpilation legacy
   },
 };
 

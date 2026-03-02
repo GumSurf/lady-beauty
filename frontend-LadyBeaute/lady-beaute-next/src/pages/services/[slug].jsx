@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
-  const url = `${API_URL}/api/services?filters[slug][$eq]=${slug}&populate[imageHero]=true&populate[images]=true&populate[servicesSimilaires][populate]=imageHero`;
+  const url = `${API_URL}/api/services?filters[slug][$eq]=${slug}&populate[imageHero]=true&populate[images]=true&populate[servicesSimilaires][populate]=imageHero&populate[faq]=true`;
 
   const res = await fetch(url);
   const data = await res.json();
@@ -41,18 +41,22 @@ export async function getStaticProps({ params }) {
       shortDescription: s.description?.slice(0, 100) + "..." || "",
     })) || [];
 
-  const formattedService = {
-    name: serviceData.name,
-    imageHero: serviceData.imageHeroPath || "",
-    images: serviceData.imagesPath || [],
-    description: serviceData.description,
-    sessionDetails: serviceData.sessionDetails,
-    benefits: serviceData.benefits,
-    sessionsAvailable: serviceData.sessionsAvailable,
-    duration: serviceData.duration,
-    price: serviceData.price,
-    servicesSimilaires: similar,
-  };
+const formattedService = {
+  name: serviceData.name,
+  imageHero: serviceData.imageHeroPath || "",
+  images: serviceData.imagesPath || [],
+  description: serviceData.description,
+  sessionDetails: serviceData.sessionDetails,
+  benefits: serviceData.benefits,
+  sessionsAvailable: serviceData.sessionsAvailable,
+  duration: serviceData.duration,
+  price: serviceData.price,
+  servicesSimilaires: similar,
+  faq: serviceData.faq?.map((item) => ({
+    question: item.question,
+    answer: item.answer,
+  })) || [], // fallback empty array
+};
 
   return {
     props: { service: formattedService },

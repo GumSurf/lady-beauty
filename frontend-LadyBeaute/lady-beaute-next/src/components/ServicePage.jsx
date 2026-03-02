@@ -199,7 +199,7 @@ const ServicePage = ({
             >
               <motion.h2
                 id="session-count-title"
-                className="text-3xl font-semibold mb-4 text-brand-text"
+                className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 text-brand-text"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
@@ -207,8 +207,9 @@ const ServicePage = ({
               >
                 Combien de séances prévoir ?
               </motion.h2>
+
               <motion.p
-                className="text-lg text-brand-text mb-10 mx-auto max-w-3xl"
+                className="text-base sm:text-lg md:text-xl text-brand-text mb-10 mx-auto max-w-xs sm:max-w-md md:max-w-3xl break-words"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
@@ -216,7 +217,13 @@ const ServicePage = ({
               >
                 {sessionsAvailable}
               </motion.p>
-              <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}>
+
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+              >
                 <BookingButton />
               </motion.div>
             </section>

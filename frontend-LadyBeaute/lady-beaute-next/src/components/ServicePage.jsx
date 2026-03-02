@@ -33,12 +33,14 @@ const ServicePage = ({
   duration,
   price,
   servicesSimilaires = [],
+  faq = [],
 }) => {
   const shortDesc = description.slice(0, 155) + "...";
   const slug = slugify(name, { lower: true, strict: true });
   const jsonLdData = generateJsonLdService({ name, description, image: imageHero });
 
   console.log(servicesSimilaires);
+  console.log(faq);
 
   return (
     <>
@@ -221,15 +223,41 @@ const ServicePage = ({
           </div>
         </div>
 
-        {service.faq && service.faq.length > 0 && (
-          <section className="faq mt-10">
-            <h2 className="text-2xl font-bold mb-4">FAQ</h2>
-            {service.faq.map((item, idx) => (
-              <div key={idx} className="mb-4">
-                <h3 className="font-semibold">{item.question}</h3>
-                <p className="text-gray-700">{item.answer}</p>
-              </div>
-            ))}
+        {/* FAQ Section */}
+        {faq.length > 0 && (
+          <section className="bg-white mx-auto px-6 py-24 relative z-10 bg-brand-light shadow-inner">
+            <h2 className="text-4xl font-serif font-bold mb-12 text-center text-brand-accent tracking-wide drop-shadow-md">
+              Foire aux Questions
+            </h2>
+
+            <div className="space-y-6 max-w-6xl mx-auto">
+              {faq.map((item, idx) => (
+                <details
+                  key={idx}
+                  className="group bg-white rounded-[2rem] shadow-xl border border-gray-200 overflow-hidden transition-all duration-500 hover:shadow-2xl"
+                >
+                  {/* Question clickable */}
+                  <summary className="cursor-pointer flex justify-between items-center p-6 md:p-8 text-lg md:text-xl font-semibold text-gray-800 list-none select-none">
+                    {item.question}
+                    <span className="ml-4 transition-transform duration-500 group-open:rotate-45 text-3xl font-bold text-brand-accent">
+                      +
+                    </span>
+                  </summary>
+
+                  {/* Réponse */}
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    transition={{ duration: 0.5 }}
+                    className="px-6 md:px-8 pb-6 text-gray-700 prose max-w-none font-serif leading-relaxed text-lg"
+                  >
+                    {item.answer.map((block, i) => (
+                      <p key={i}>{block.children.map((c) => c.text).join("")}</p>
+                    ))}
+                  </motion.div>
+                </details>
+              ))}
+            </div>
           </section>
         )}
 

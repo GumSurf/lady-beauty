@@ -27,8 +27,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
-    esmExternals: true,
-    modern: true,
+    esmExternals: true, // utilise ES modules pour les dépendances → pas de transpilation legacy
   },
 };
 

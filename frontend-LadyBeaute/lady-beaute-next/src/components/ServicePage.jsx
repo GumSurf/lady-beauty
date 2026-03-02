@@ -208,7 +208,7 @@ const ServicePage = ({
                 Combien de séances prévoir ?
               </motion.h2>
               <motion.p
-                className="text-lg text-brand-text mb-10"
+                className="text-lg text-brand-text mb-10 mx-auto max-w-3xl"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"

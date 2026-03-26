@@ -1,66 +1,28 @@
 // pages/services/[slug].jsx
+import { useRouter } from "next/router";
+import { services } from "../../Data/servicesData";
 import ServicePage from "../../components/ServicePage";
 
-const API_URL = "https://blessed-connection-657913a5dc.strapiapp.com";
+export default function Page() {
+  const router = useRouter();
+  const { slug } = router.query;
 
-// Récupère tous les slugs pour pré-générer les pages
-export async function getStaticPaths() {
-  const res = await fetch(`${API_URL}/api/services`);
-  const data = await res.json();
+  if (!slug) return <p>Chargement…</p>;
 
-  const paths = data.data.map((service) => ({
-    params: { slug: service.slug },
-  }));
+  const service = services.find((s) => s.slug === slug);
+  if (!service) return <p>Service non trouvé</p>;
 
-  return {
-    paths,
-    fallback: "blocking", // Génère à la volée si le slug n’existe pas encore
-  };
-}
-
-// Récupère les données pour un slug donné
-export async function getStaticProps({ params }) {
-  const { slug } = params;
-
-const url = `${API_URL}/api/services?filters[slug][$eq]=${slug}&populate[imageHero]=true&populate[images]=true&populate[servicesSimilaires][populate]=imageHero&populate[faq]=true`;
-
-  const res = await fetch(url);
-  const data = await res.json();
-
-  if (!data.data || data.data.length === 0) {
-    return { notFound: true };
-  }
-
-  const serviceData = data.data[0];
-
-  const similar =
-    serviceData.servicesSimilaires?.map((s) => ({
-      id: s.id,
+  const servicesSimilaires = services
+    .filter((s) => s.slug !== slug)
+    .map((s) => ({
       name: s.name,
-      imageHero: s.imageHeroPath || "",
-      shortDescription: s.description?.slice(0, 100) + "..." || "",
-    })) || [];
+      imageHero: s.imageHero,
+      shortDescription: s.description.slice(0, 100) + "..."
+    }));
 
-const formattedService = {
-  name: serviceData.name,
-  imageHero: serviceData.imageHeroPath || "",
-  images: serviceData.imagesPath || [],
-  description: serviceData.description,
-  sessionDetails: serviceData.sessionDetails,
-  benefits: serviceData.benefits,
-  sessionsAvailable: serviceData.sessionsAvailable,
-  duration: serviceData.duration,
-  price: serviceData.price,
-  servicesSimilaires: similar,
-  faq: serviceData.faq || [],
-};
+  // Passe-les directement dans le service
+  const serviceWithSimilaires = { ...service, servicesSimilaires };
 
-  return {
-    props: { service: formattedService },
-    revalidate: 60, // régénère toutes les 60s
-  };
-}
-
-export default function Service({ service }) {
-  return <ServicePage {...service} />;
+  console.log("Service trouvé : ", serviceWithSimilaires);
+  return <ServicePage service={serviceWithSimilaires} />;
 }

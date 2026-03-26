@@ -22,19 +22,21 @@ const BookingButton = ({ className = "" }) => (
   </a>
 );
 
-const ServicePage = ({
-  name,
-  imageHero,
-  images,
-  description,
-  sessionDetails,
-  benefits,
-  sessionsAvailable,
-  duration,
-  price,
-  servicesSimilaires = [],
-  faq = [],
-}) => {
+const ServicePage = ({ service }) => {
+  const {
+    name,
+    imageHero,
+    images,
+    description,
+    sessionDetails,
+    benefits,
+    sessionsAvailable,
+    servicesSimilaires = [],
+    faq = [],
+  } = service || {};
+
+  console.log("description: ", description);
+
   const shortDesc = description.slice(0, 155) + "...";
   const slug = slugify(name, { lower: true, strict: true });
   const jsonLdData = generateJsonLdService({ name, description, image: imageHero });
@@ -56,7 +58,7 @@ const ServicePage = ({
         {/* Hero Section */}
         <div
           className="min-h-[80vh] md:h-screen bg-cover bg-center relative flex items-center justify-center z-10"
-          style={{ backgroundImage: `url(/images/${imageHero}-1280.webp)` }}
+          style={{ backgroundImage: `url(/images/${imageHero}-1920.webp)` }}
         >
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
           <motion.div
@@ -65,7 +67,7 @@ const ServicePage = ({
             transition={{ duration: 1 }}
             className="relative z-10 text-center px-4"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-2xl tracking-wide">
+            <h1 className="text-4xl sm:text-3xl md:text-6xl font-bold text-white drop-shadow-2xl tracking-wide">
               {name}
             </h1>
             {/* <p className="text-xl md:text-2xl text-brand-rose mt-4 italic">
@@ -85,7 +87,7 @@ const ServicePage = ({
               viewport={{ once: true }}
             >
               <Image
-                src={`/images/${images[0]}.jpg`}
+                src={`/images/${images[0]}.webp`}
                 alt={`Illustration de ${name}`}
                 width={1280}
                 height={500}
@@ -132,7 +134,7 @@ const ServicePage = ({
               viewport={{ once: true }}
             >
               <Image
-                src={`/images/${images[1]}.jpg`}
+                src={`/images/${images[1]}.webp`}
                 alt={`Illustration de ${name}`}
                 width={1280}
                 height={500}
@@ -304,7 +306,7 @@ const ServicePage = ({
                     viewport={{ once: true }}
                   >
                     <Image
-                      src={`/images/${service.imageHero}.jpg`}
+                      src={`/images/${service.imageHero}-1920.webp`}
                       alt={service.name}
                       width={1280}
                       height={192}

@@ -9,34 +9,34 @@ const categories = [
         services: [
             {
                 name: "Soin Visage & Corps",
-                image: "/images/pexels-arina-krasnikova-6663368",
+                image: "/images/soin-visage-corps-hero-1920",
                 description:
                     "Soins personnalisés pour visage et corps, hydratation et revitalisation.",
             },
             {
                 name: "Microneedling",
-                image: "/images/pexels-shiny-diamond-3373721",
+                image: "/images/microneedling-hero-1920",
                 description:
                     "Stimulation du collagène pour une peau éclatante et renouvelée.",
             },
             {
                 name: "Microblading",
-                image: "/images/pexels-danxavier-839633",
+                image: "/images/microblading-hero-1920",
                 description: "Maquillage semi-permanent pour sourcils naturels.",
             },
             {
                 name: "Winner filler",
-                image: "/images/close-up-beauty-portrait-sensual-ginger-woman-with-long-hair-posing-with-closed-eyes",
+                image: "/images/winner-filler-hero-1920",
                 description: "Maquillage semi-permanent pour sourcils naturels.",
             },
             {
                 name: "Acide hyaluronique",
-                image: "/images/pink-abstract-background-oil-bubble-water-wallpaper",
+                image: "/images/acide-hyaluronique-hero-1920",
                 description: "Maquillage semi-permanent pour sourcils naturels.",
             },
             {
                 name: "Onglerie",
-                image: "/images/woman-showing-her-beautiful-nails",
+                image: "/images/onglerie-hero-1920",
                 description: "Maquillage semi-permanent pour sourcils naturels.",
             },
         ],
@@ -46,13 +46,13 @@ const categories = [
         services: [
             {
                 name: "Thérapie par ventouses",
-                image: "/images/woman-experiencing-cupping-therapy",
+                image: "/images/ventouses-hero-1920",
                 description:
                     "Massage par succion pour circulation et détente musculaire.",
             },
             {
                 name: "Plasma pen",
-                image: "/images/pexels-pixabay-34769",
+                image: "/images/plasma-pen-hero-1920",
                 description: "Plasma froid pour raffermir et régénérer la peau.",
             },
         ],
@@ -62,25 +62,24 @@ const categories = [
         services: [
             {
                 name: "Lipocavitation anticellulite",
-                image: "/images/close-up-hands-holding-belly",
+                image: "/images/lipocavitation-hero-1920",
                 description:
                     "Réduction ciblée de la cellulite et lissage de la peau.",
             },
             {
                 name: "Épilation à la cire et au fil",
-                image: "/images/close-up-hand-touching-leg",
+                image: "/images/epilation-hero-1920",
                 description: "Techniques classiques pour une peau douce et nette.",
             },
             {
                 name: "Épilation électrique à l'aiguille",
-                image: "/images/beautiful-woman-lingerie",
+                image: "/images/epilation-electrique-hero-1920",
                 description: "Techniques classiques pour une peau douce et nette.",
             },
         ],
     },
 ];
 
-// Helper to set grid columns based on service count
 const getGridClasses = (count) => {
     switch (count) {
         case 1:
@@ -146,7 +145,7 @@ const ServicesGrid = () => {
                                         <Link href={`/services/${slug}`} className="relative group overflow-hidden rounded-3xl bg-white/40 backdrop-blur-md border border-[#C99192]/30 shadow-lg hover:shadow-2xl transition-all duration-300">
                                             <div className="h-48 overflow-hidden rounded-t-3xl">
                                                 <Image
-                                                    src={image + ".jpg"}
+                                                    src={image + ".webp"}
                                                     alt={name}
                                                     width={1280}
                                                     height={192}

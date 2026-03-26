@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Link from "next/link"; // Si tu es en Next.js sinon reviens à react-router-dom
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
@@ -14,7 +14,7 @@ const slides = [
         title: "Soin du visage et peau",
         description:
             "Offrez à votre peau un soin complet et revitalisant, pour un teint frais, lumineux et éclatant de santé.",
-        image: "/images/pexels-arina-krasnikova-6663574",
+        image: "/images/hero-carousel-1",
         anchor: "soin-visage-and-corps",
     },
     {
@@ -22,7 +22,7 @@ const slides = [
         title: "Soins techniques spécifiques",
         description:
             "Des techniques innovantes et douces pour améliorer la texture de votre peau et révéler sa beauté naturelle.",
-        image: "/images/pexels-polina-tankilevitch-3738355",
+        image: "/images/hero-carousel-2",
         anchor: "therapie-par-ventouses",
     },
     {
@@ -30,7 +30,7 @@ const slides = [
         title: "Soins corporels et esthétiques",
         description:
             "Prenez soin de votre corps avec des soins ciblés pour une peau douce, hydratée et éclatante de vitalité.",
-        image: "/images/pexels-shkrabaanthony-5177995",
+        image: "/images/hero-carousel-3",
         anchor: "epilation-a-la-cire-et-au-fil",
     },
 ];
@@ -61,7 +61,7 @@ const HeroCarousel = () => {
                                         }`}
                                 ></div>
                                 <Image
-                                    src={slide.image + ".jpg"}
+                                    src={slide.image + ".webp"}
                                     alt={slide.title}
                                     fill
                                     className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-in-out ${activeIndex === index ? "scale-110" : "scale-100"

@@ -35,7 +35,7 @@ const AboutLadyBeauty = () => {
                 >
                     <div className="grid grid-cols-2 gap-4 mb-4">
                         <Image
-                            src="/images/pexels-olly-3756694.jpg"
+                            src="/images/about-1.webp"
                             alt="Institut 1"
                             width={768}
                             height={192}
@@ -43,7 +43,7 @@ const AboutLadyBeauty = () => {
                             sizes="(max-width: 768px) 100vw, 50vw"
                         />
                         <Image
-                            src="/images/pexels-andrzej-gdula-177638374-12336389.jpg"
+                            src="/images/about-2.webp"
                             alt="Soin beauté"
                             width={768}
                             height={192}
@@ -52,7 +52,7 @@ const AboutLadyBeauty = () => {
                         />
                     </div>
                     <Image
-                        src="/images/pexels-jonathanborba-19641830.jpg"
+                        src="/images/about-3.webp"
                         alt="Visage détendu"
                         width={1280}
                         height={256}

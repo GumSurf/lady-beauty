@@ -25,7 +25,7 @@ const AboutPage = () => {
                     className="min-h-[80vh] md:h-screen bg-cover bg-center relative flex items-center justify-center z-10"
                     style={{
                         backgroundImage:
-                            "url('/images/pexels-mareefe-672051-1920.webp')",
+                            "url('/images/a-propos-hero.webp')",
                     }}
                 >
                     <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
@@ -54,7 +54,7 @@ const AboutPage = () => {
                             viewport={{ once: true }}
                         >
                             <Image
-                                src="/images/d52f8050-1e7b-4f20-83c1-e65b7170a44d.jpg"
+                                src="/images/a-propos-1.webp"
                                 alt="Portrait de la fondatrice de Lady Beaute"
                                 width={1280}
                                 height={500}

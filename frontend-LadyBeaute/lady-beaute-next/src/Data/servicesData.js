@@ -604,13 +604,8 @@ Chaque séance dure entre 20 et 60 minutes, selon la zone traitée, et se termin
     name: "Épilation Électrique à l’Aiguille",
     imageHero: "epilation-electrique-hero",
     images: ["epilation-electrique-1", "epilation-electrique-2"],
-    description: `L’Épilation Électrique à l’Aiguille à Lanester est une méthode professionnelle et définitive pour éliminer durablement les poils indésirables sur toutes les zones du visage et du corps. 
-Idéale pour les habitants de Lorient, Hennebont et leurs environs, cette technique précise cible chaque follicule pileux pour un résultat sûr et durable. 
-L’institut est tenu par une praticienne unique, offrant un suivi individualisé et attentif, garantissant sécurité et efficacité à chaque séance.`,
-    sessionDetails: `La séance commence par un nettoyage et désinfection minutieux de la zone à traiter. 
-La praticienne applique ensuite l’épilation électrique à l’aiguille, traitant follicule par follicule pour éliminer les poils de manière définitive. 
-Chaque séance dure entre 30 et 90 minutes, selon la zone et le nombre de poils à traiter. 
-Un soin apaisant post-traitement est appliqué pour minimiser rougeurs et inconfort et favoriser la régénération de la peau.`,
+    description: "L’Épilation Électrique à l’Aiguille à Lanester est une méthode professionnelle et définitive pour éliminer durablement les poils indésirables sur toutes les zones du visage et du corps. Idéale pour les habitants de Lorient, Hennebont et leurs environs, cette technique précise cible chaque follicule pileux pour un résultat sûr et durable. L’institut est tenu par une praticienne unique, offrant un suivi individualisé et attentif, garantissant sécurité et efficacité à chaque séance.",
+    sessionDetails: "La séance commence par un nettoyage et désinfection minutieux de la zone à traiter. La praticienne applique ensuite l’épilation électrique à l’aiguille, traitant follicule par follicule pour éliminer les poils de manière définitive. Chaque séance dure entre 30 et 90 minutes, selon la zone et le nombre de poils à traiter. Un soin apaisant post-traitement est appliqué pour minimiser rougeurs et inconfort et favoriser la régénération de la peau.",
     benefits: [
       "Élimination définitive des poils indésirables",
       "Traitement précis follicule par follicule",
